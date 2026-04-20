@@ -1,94 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Creative Business Group builds digital infrastructure and operational frameworks for founders and creators.">
-  <title>TCBG | The Creative Business Group</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCBG | Strategic Growth Infrastructure</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background:#050505; overflow-x:hidden; }
+    #intro {
+      position: fixed; inset:0; background:#050505;
+      display:flex; align-items:center; justify-content:center;
+      z-index:9999; animation: fadeOut 1.2s ease forwards; animation-delay:2.2s;
+    }
+    @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
+    .glass { background: rgba(10,10,10,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .soft-border { border:1px solid rgba(255,255,255,.08); }
+    .hero-panel { background-image: linear-gradient(to top, rgba(5,5,5,.65), rgba(5,5,5,.08)), url('hero_opening_panel.png'); background-size: cover; background-position: center; }
+    .tile-image { aspect-ratio: 4 / 5; width:100%; object-fit:cover; display:block; }
+    .section-fade { opacity:0; transform:translateY(20px); animation:fadeUp .9s ease forwards; }
+    .delay-1 { animation-delay:.12s; } .delay-2 { animation-delay:.24s; } .delay-3 { animation-delay:.36s; }
+    @keyframes fadeUp { to { opacity:1; transform:translateY(0);} }
+  </style>
 </head>
-<body>
-  <div class="site-shell">
-    <header class="site-header">
-      <a class="brand" href="index.html">TCBG</a>
-      <nav class="site-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero hero-home">
-        <div class="hero-copy">
-          <p class="eyebrow">The Creative Business Group</p>
-          <h1>Operational infrastructure for creators, founders, and high-conviction ventures.</h1>
-          <p class="lead">We design polished digital presence, business systems, and deployment-ready frameworks that help ambitious operators move from concept to credible execution.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="contact.html">Start the Conversation</a>
-            <a class="button button-secondary" href="services.html">Explore Services</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="visual-panel panel-a"></div>
-          <div class="visual-panel panel-b"></div>
-          <div class="visual-panel panel-c"></div>
-        </div>
-      </section>
-
-      <section class="stats-grid">
-        <article class="stat-card">
-          <span class="stat-value">01</span>
-          <h2>Strategic Positioning</h2>
-          <p>Messaging, authority, and narrative architecture designed to elevate readiness and trust.</p>
-        </article>
-        <article class="stat-card">
-          <span class="stat-value">02</span>
-          <h2>Deployment Layers</h2>
-          <p>Lean, expandable web systems that support immediate launch while preserving room for growth.</p>
-        </article>
-        <article class="stat-card">
-          <span class="stat-value">03</span>
-          <h2>Operational Design</h2>
-          <p>Structured systems thinking that connects audience experience, delivery capability, and backend execution.</p>
-        </article>
-      </section>
-
-      <section class="content-section split-section">
-        <div>
-          <p class="eyebrow">Built for serious operators</p>
-          <h2>From first impression to internal systemization.</h2>
-          <p>TCBG helps creative and entrepreneurial ventures present with clarity, operate with discipline, and scale with intelligent structure.</p>
-        </div>
-        <div class="feature-list">
-          <div class="feature-item">
-            <h3>Landing pages that convert</h3>
-            <p>Authority-building digital surfaces made for meetings, outreach, and funding conversations.</p>
-          </div>
-          <div class="feature-item">
-            <h3>Service architecture</h3>
-            <p>Information hierarchy and modular page structures that grow with your organization.</p>
-          </div>
-          <div class="feature-item">
-            <h3>Future-ready foundation</h3>
-            <p>Prepared for later integration into deeper systems such as intake, dashboards, and business deployment tools.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div>
-        <strong>TCBG</strong>
-        <p>The Creative Business Group</p>
-      </div>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </footer>
+<body class="text-white font-sans antialiased">
+  <div id="intro">
+    <div class="text-center px-6">
+      <img src="tcbg_logo.png" alt="TCBG logo" class="mx-auto mb-4 w-[230px] max-w-[75vw]">
+      <p class="text-gray-400 text-sm tracking-[0.22em] uppercase">Building Scalable Business Infrastructure</p>
+    </div>
   </div>
+
+  <nav class="px-5 py-5 md:px-8 border-b border-white/10 glass sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <a href="index.html" class="shrink-0"><img src="tcbg_logo.png" alt="TCBG logo" class="h-8 md:h-9 w-auto"></a>
+      <div class="hidden md:flex items-center space-x-8 text-sm text-gray-400">
+        <a href="governance.html" class="hover:text-white transition">Governance</a>
+        <a href="incubation.html" class="hover:text-white transition">Incubation</a>
+        <a href="investors.html" class="hover:text-white transition">Investors</a>
+      </div>
+      <a href="#contact" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 rounded-full text-sm font-bold transition shrink-0">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,.16),transparent_24%),radial-gradient(circle_at_80%_15%,rgba(59,130,246,.12),transparent_20%),linear-gradient(135deg,#050505_0%,#09111d_45%,#050505_100%)]"></div>
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-6 py-16 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="section-fade text-blue-400 text-sm md:text-base font-semibold tracking-[0.18em] uppercase mb-5">
+            Strategic Infrastructure • Venture Growth • Capital Readiness
+          </p>
+          <h1 class="section-fade delay-1 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            Built for founders, creators, and businesses ready to scale.
+          </h1>
+          <p class="section-fade delay-2 text-lg md:text-xl text-gray-300 max-w-2xl mb-8 leading-relaxed">
+            The Creative Business Group helps transform ideas into structured, scalable, and investment-ready businesses through strategy, systems, execution, and long-range growth planning.
+          </p>
+          <div class="section-fade delay-3 flex flex-col sm:flex-row gap-4">
+            <a href="incubation.html" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition text-center">Apply for Incubation</a>
+            <a href="#ecosystem" class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition text-center">Explore Ecosystem</a>
+          </div>
+        </div>
+
+        <div class="section-fade delay-2">
+          <div class="glass soft-border rounded-3xl p-4 md:p-6 shadow-2xl">
+            <div class="hero-panel rounded-2xl overflow-hidden min-h-[300px] md:min-h-[420px] flex items-end">
+              <div class="w-full p-6 md:p-8 bg-gradient-to-t from-black/75 via-black/45 to-transparent">
+                <p class="text-xs uppercase tracking-[0.25em] text-blue-300 mb-2">Opening Brand Story</p>
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">From Vision to Scalable Execution</h2>
+                <p class="text-gray-200 text-sm md:text-base max-w-lg">
+                  A cinematic opening experience that presents TCBG as a premium ecosystem for governance, incubation, and capital readiness.
+                </p>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-3 mt-4 text-center">
+              <div class="rounded-2xl bg-white/5 p-4"><div class="text-blue-400 font-bold text-lg">01</div><div class="text-xs text-gray-400 mt-1">Clarify</div></div>
+              <div class="rounded-2xl bg-white/5 p-4"><div class="text-blue-400 font-bold text-lg">02</div><div class="text-xs text-gray-400 mt-1">Structure</div></div>
+              <div class="rounded-2xl bg-white/5 p-4"><div class="text-blue-400 font-bold text-lg">03</div><div class="text-xs text-gray-400 mt-1">Scale</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-5 sm:px-6 py-16 md:py-24 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-5">Who We Build For</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto mb-12">
+      We partner with ambitious people and organizations that need more than advice. They need a system that can grow with them.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+      <div class="bg-[#0A0A0A] rounded-2xl soft-border overflow-hidden">
+        <img src="founders_tile.jpg" alt="Founders collaborating around a digital business model table" class="tile-image">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-3">Founders</h3>
+          <p class="text-gray-400">Build the clarity, operational structure, and momentum needed to move from idea to execution.</p>
+        </div>
+      </div>
+
+      <div class="bg-[#0A0A0A] rounded-2xl soft-border overflow-hidden">
+        <img src="creators_tile.png" alt="Creators presenting strategy and visual business intelligence" class="tile-image">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-3">Creators</h3>
+          <p class="text-gray-400">Turn vision, audience, and intellectual property into organized business infrastructure and revenue pathways.</p>
+        </div>
+      </div>
+
+      <div class="bg-[#0A0A0A] rounded-2xl soft-border overflow-hidden">
+        <img src="businesses_tile.png" alt="Growing businesses aligning technology and scale" class="tile-image">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-3">Growing Businesses</h3>
+          <p class="text-gray-400">Prepare your company for expansion, stronger governance, and future capital conversations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#0A0A0A] py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-5">From Vision to Execution</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto mb-12">
+        Most businesses do not fail from lack of effort. They stall because vision, structure, and execution are not aligned.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-black/20 rounded-2xl p-6 soft-border">
+          <h3 class="font-bold text-xl mb-2">Clarity</h3>
+          <p class="text-gray-400">Define your direction, priorities, and business model.</p>
+        </div>
+        <div class="bg-black/20 rounded-2xl p-6 soft-border">
+          <h3 class="font-bold text-xl mb-2">Structure</h3>
+          <p class="text-gray-400">Build systems, workflows, and governance that support growth.</p>
+        </div>
+        <div class="bg-black/20 rounded-2xl p-6 soft-border">
+          <h3 class="font-bold text-xl mb-2">Scale</h3>
+          <p class="text-gray-400">Position the business for expansion, investment, and long-term sustainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ecosystem" class="max-w-6xl mx-auto px-5 sm:px-6 py-16 md:py-24">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-5">Our Ecosystem</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto text-center mb-12">
+      A connected framework designed to support operations, venture development, and capital readiness.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="governance.html" class="bg-[#0A0A0A] p-6 rounded-2xl soft-border hover:border-blue-500/60 transition block">
+        <p class="text-xs tracking-[0.2em] uppercase text-blue-400 mb-3">01</p>
+        <h3 class="text-xl font-bold mb-3">Governance</h3>
+        <p class="text-gray-400">Operational structure, automation, compliance thinking, and business integrity.</p>
+      </a>
+      <a href="incubation.html" class="bg-[#0A0A0A] p-6 rounded-2xl soft-border hover:border-blue-500/60 transition block">
+        <p class="text-xs tracking-[0.2em] uppercase text-blue-400 mb-3">02</p>
+        <h3 class="text-xl font-bold mb-3">Incubation</h3>
+        <p class="text-gray-400">Strategic development, launch pathways, and growth planning for emerging ventures.</p>
+      </a>
+      <a href="investors.html" class="bg-[#0A0A0A] p-6 rounded-2xl soft-border hover:border-blue-500/60 transition block">
+        <p class="text-xs tracking-[0.2em] uppercase text-blue-400 mb-3">03</p>
+        <h3 class="text-xl font-bold mb-3">Investor Relations</h3>
+        <p class="text-gray-400">Capital readiness, presentation strategy, and secure access to high-level materials.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 md:py-24 bg-[#0A0A0A]">
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-5">Let’s build what your business was meant to be.</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+        Whether you are refining an idea, strengthening operations, or preparing for growth, we can help build the infrastructure behind the vision.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="incubation.html" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-bold transition">Start Your Application</a>
+        <a href="mailto:info@thecreativebusinessgroup.com" class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 text-center py-8 text-gray-500 text-sm">
+    © 2026 The Creative Business Group
+  </footer>
 </body>
 </html>
