@@ -1,31 +1,25 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0a0a0a;
-  color: #ffffff;
-  text-align: center;
-}
-
-header {
-  padding: 40px 20px;
-}
-
-.hero {
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #111, #222);
-}
-
-.cta button {
-  padding: 12px 24px;
-  font-size: 16px;
-  background: #ffffff;
-  color: #000;
-  border: none;
-  cursor: pointer;
-}
-
-footer {
-  padding: 20px;
-  font-size: 12px;
-  opacity: 0.6;
-}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#050505;color:#fff}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid #222}
+.site-nav a{margin-left:20px;color:#aaa;text-decoration:none}
+.site-nav a:hover{color:#fff}
+.hero{display:flex;justify-content:space-between;align-items:center;padding:80px 40px}
+.hero-copy{max-width:600px}
+.hero h1{font-size:40px;line-height:1.2}
+.hero .lead{color:#aaa;margin-top:10px}
+.hero-actions{margin-top:20px}
+.button{padding:10px 18px;text-decoration:none;border-radius:4px;margin-right:10px}
+.button-primary{background:#fff;color:#000}
+.button-secondary{border:1px solid #555;color:#fff}
+.hero-visual{display:flex;gap:10px}
+.visual-panel{width:80px;height:200px;background:#111}
+.panel-a{background:#111}
+.panel-b{background:#222}
+.panel-c{background:#333}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:40px}
+.stat-card{background:#111;padding:20px}
+.stat-value{font-size:24px;color:#888}
+.content-section{padding:60px 40px}
+.split-section{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.feature-item{margin-bottom:20px}
+.site-footer{display:flex;justify-content:space-between;padding:30px 40px;border-top:1px solid #222}
+.footer-links a{margin-left:20px;color:#aaa;text-decoration:none}
