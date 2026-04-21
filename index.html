@@ -7,14 +7,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-    body { background: radial-gradient(circle at top, #0b1220 0%, #050505 58%); overflow-x:hidden; }
+    body { background: radial-gradient(circle at top, #091327 0%, #04070d 62%); overflow-x:hidden; }
     #intro { position: fixed; inset:0; background:#050505; display:flex; align-items:center; justify-content:center; z-index:9999; animation: fadeOut 1.15s ease forwards; animation-delay:3.8s; overflow:hidden; }
     #intro video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    .intro-overlay { position:relative; z-index:2; text-align:center; padding:1.5rem; background:linear-gradient(to top, rgba(5,5,5,.72), rgba(5,5,5,.22)); border:1px solid rgba(255,255,255,.08); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius:1.5rem; }
-    .intro-scrim { position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(5,5,5,.72), rgba(5,5,5,.28), rgba(5,5,5,.60)); }
+    .intro-overlay { position:relative; z-index:2; text-align:center; padding:1.5rem; background:linear-gradient(to top, rgba(5,5,5,.72), rgba(5,5,5,.18)); border:1px solid rgba(255,255,255,.08); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius:1.5rem; }
+    .intro-scrim { position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(5,5,5,.78), rgba(5,5,5,.22), rgba(5,5,5,.62)); }
     @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
-    .glass { background: rgba(10,10,10,.60); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
-    .soft-border { border:1px solid rgba(255,255,255,.08); }
+    .glass { background: rgba(5,8,15,.72); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .soft-border { border:1px solid rgba(255,255,255,.12); }
     .hero-panel { background-image: linear-gradient(to top, rgba(4,4,4,.75), rgba(4,4,4,.14)), url('hero_opening_panel.png'); background-size: cover; background-position: center; }
     .tile-image { aspect-ratio: 4 / 5; width:100%; object-fit:cover; display:block; transition: transform .45s ease; }
     .card-hover { transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease; }
@@ -26,6 +26,17 @@
     .section-fade { opacity:0; transform:translateY(20px); animation:fadeUp .9s ease forwards; }
     .delay-1 { animation-delay:.12s; } .delay-2 { animation-delay:.24s; } .delay-3 { animation-delay:.36s; }
     @keyframes fadeUp { to { opacity:1; transform:translateY(0);} }
+    @media (max-width: 767px) {
+      .mock-header { padding-top: 1.6rem; padding-bottom: 1.6rem; }
+      .mock-logo { height: 3.1rem; }
+      .mock-cta { padding: 1.1rem 2rem; border-radius: 9999px; font-size: 1.05rem; }
+      .mock-hero-wrap { padding-top: 4rem; padding-bottom: 4.25rem; }
+      .mock-kicker { font-size: 1rem; line-height: 1.65; letter-spacing: .28em; max-width: 92%; }
+      .mock-title { font-size: 4.45rem; line-height: .98; letter-spacing: -.055em; }
+      .mock-copy { font-size: 1.02rem; line-height: 1.85; color: rgba(229,231,235,.86); }
+      .mock-primary-btn { width: 100%; padding: 1.55rem 1.6rem; border-radius: 9999px; font-size: 1.1rem; font-weight: 800; }
+      .mock-secondary-btn { width: 100%; padding: 1.05rem 1.3rem; border-radius: 9999px; }
+    }
   </style>
 </head>
 <body class="text-white font-sans antialiased">
@@ -34,40 +45,40 @@
       <source src="intro.mp4" type="video/mp4">
     </video>
     <div class="intro-scrim"></div>
-    <div class="intro-overlay w-full max-w-[95vw] md:max-w-[900px] px-6 py-8">
-      <img src="tcbg_logo.svg?v=1" alt="TCBG logo" class="mx-auto mb-6 w-auto max-w-[90vw] md:max-w-[760px] h-auto">
+    <div class="intro-overlay w-full max-w-[95vw] md:max-w-[980px] px-6 py-8">
+      <img src="tcbg_logo.svg?v=2" alt="TCBG logo" class="mx-auto mb-6 w-auto max-w-[92vw] md:max-w-[860px] h-auto">
       <p class="text-gray-100 text-sm md:text-base tracking-[0.2em] uppercase opacity-90">Building Scalable Business Infrastructure</p>
     </div>
   </div>
 
-  <nav class="px-5 py-6 md:px-8 border-b border-white/10 glass sticky top-0 z-40">
+  <nav class="mock-header px-5 py-6 md:px-8 border-b border-white/10 glass sticky top-0 z-40">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-      <a href="index.html" class="shrink-0"><img src="tcbg_logo.svg?v=1" alt="TCBG logo" class="h-12 md:h-16 w-auto opacity-95"></a>
+      <a href="index.html" class="shrink-0"><img src="tcbg_logo.svg?v=2" alt="TCBG logo" class="mock-logo h-12 md:h-[4.15rem] w-auto opacity-95"></a>
       <div class="hidden md:flex items-center space-x-8 text-sm text-gray-400">
         <a href="governance.html" class="hover:text-white transition">Governance</a>
         <a href="incubation.html" class="hover:text-white transition">Incubation</a>
         <a href="investors.html" class="hover:text-white transition">Investors</a>
       </div>
-      <a href="#contact" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 rounded-full text-sm font-bold transition shrink-0 button-lift">Get Started</a>
+      <a href="#contact" class="mock-cta px-7 py-3.5 md:px-8 md:py-4 bg-blue-600 hover:bg-blue-500 rounded-full text-base font-bold transition shrink-0 button-lift">Get Started</a>
     </div>
   </nav>
 
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,.16),transparent_24%),radial-gradient(circle_at_80%_15%,rgba(59,130,246,.12),transparent_20%),linear-gradient(135deg,#050505_0%,#09111d_45%,#050505_100%)]"></div>
-    <div class="relative max-w-7xl mx-auto px-5 sm:px-6 py-16 md:py-24">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(59,130,246,.19),transparent_22%),radial-gradient(circle_at_82%_16%,rgba(59,130,246,.12),transparent_20%),radial-gradient(circle_at_70%_70%,rgba(30,64,175,.14),transparent_24%),linear-gradient(135deg,#04070d_0%,#061129_45%,#04070d_100%)]"></div>
+    <div class="mock-hero-wrap relative max-w-7xl mx-auto px-5 sm:px-6 py-16 md:py-24">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          <p class="section-fade text-blue-400 text-sm md:text-base font-semibold tracking-[0.18em] uppercase mb-5">Strategic Infrastructure • Venture Growth • Capital Readiness</p>
-          <h1 class="section-fade delay-1 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.02] tracking-[-0.03em] mb-6">Built for founders, creators, and businesses ready to scale.</h1>
-          <p class="section-fade delay-2 text-lg md:text-xl text-gray-300 max-w-2xl mb-8 leading-relaxed">The Creative Business Group transforms ideas into structured, scalable, and investment-ready businesses through strategy, systems, execution, and long-range growth planning.</p>
+          <p class="mock-kicker section-fade text-blue-400 text-sm md:text-base font-medium tracking-[0.26em] uppercase mb-6">Strategic Infrastructure • Venture Growth • Capital Readiness</p>
+          <h1 class="mock-title section-fade delay-1 text-[3.9rem] sm:text-6xl md:text-7xl font-extrabold leading-[0.98] tracking-[-0.055em] mb-8">Built for founders, creators, and businesses ready to scale.</h1>
+          <p class="mock-copy section-fade delay-2 text-lg md:text-[1.36rem] text-gray-300 max-w-2xl mb-10 leading-[1.82]">The Creative Business Group transforms ideas into structured, scalable, and investment-ready businesses through strategy, systems, execution, and long-range growth planning.</p>
           <div class="section-fade delay-3 flex flex-col sm:flex-row gap-4">
-            <a href="incubation.html" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition text-center button-lift">Apply for Incubation</a>
-            <a href="#ecosystem" class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition text-center button-lift">Explore Ecosystem</a>
+            <a href="incubation.html" class="mock-primary-btn px-8 py-5 bg-white text-black font-extrabold rounded-full hover:bg-gray-200 transition text-center button-lift">Apply for Incubation</a>
+            <a href="#ecosystem" class="mock-secondary-btn px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition text-center button-lift">Explore Ecosystem</a>
           </div>
         </div>
-        <div class="section-fade delay-2">
+        <div class="section-fade delay-2 hidden lg:block">
           <div class="glass soft-border rounded-3xl p-4 md:p-6 shadow-2xl">
-            <div class="hero-panel rounded-2xl overflow-hidden min-h-[300px] md:min-h-[420px] flex items-end">
+            <div class="hero-panel rounded-2xl overflow-hidden min-h-[320px] md:min-h-[440px] flex items-end">
               <div class="w-full p-6 md:p-8 bg-gradient-to-t from-black/75 via-black/45 to-transparent">
                 <p class="text-xs uppercase tracking-[0.25em] text-blue-300 mb-2">Opening Brand Story</p>
                 <h2 class="text-2xl md:text-3xl font-bold mb-3 tracking-[-0.02em]">From Vision to Scalable Execution</h2>
