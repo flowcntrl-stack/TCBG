@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#081326"/><stop offset="1" stop-color="#02050a"/></linearGradient><linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><rect width="1200" height="760" rx="42" fill="url(#bg)"/><circle cx="250" cy="550" r="260" fill="#3b82f6" opacity=".1"/><circle cx="900" cy="200" r="200" fill="#2563eb" opacity=".15"/><rect x="180" y="180" width="840" height="400" rx="40" fill="#07101f" stroke="#1e40af"/>
+<circle cx="600" cy="380" r="110" fill="#0f172a" stroke="#60a5fa" stroke-width="6"/>
+<circle cx="600" cy="380" r="50" fill="#60a5fa" opacity=".8"/>
+<path d="M600 270v-60M600 550v60M490 380h-60M710 380h60" stroke="#93c5fd" stroke-width="10" stroke-linecap="round"/>
+<text x="150" y="690" fill="#93c5fd" font-family="Arial" font-size="24" letter-spacing="8">INCUBATION • BUILD • DEVELOP</text></svg>
