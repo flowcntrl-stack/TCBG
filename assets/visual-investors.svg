@@ -1,8 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#081326"/><stop offset="1" stop-color="#02050a"/></linearGradient><linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs><rect width="1200" height="760" rx="42" fill="url(#bg)"/><polyline points="200,540 400,420 600,480 800,300 1000,200" fill="none" stroke="#3b82f6" stroke-width="10"/>
-<circle cx="200" cy="540" r="12" fill="#60a5fa"/>
-<circle cx="400" cy="420" r="12" fill="#60a5fa"/>
-<circle cx="600" cy="480" r="12" fill="#60a5fa"/>
-<circle cx="800" cy="300" r="12" fill="#60a5fa"/>
-<circle cx="1000" cy="200" r="12" fill="#60a5fa"/>
-<rect x="250" y="150" width="700" height="300" rx="30" fill="#07101f" stroke="#1e40af"/>
-<text x="150" y="690" fill="#93c5fd" font-family="Arial" font-size="24" letter-spacing="8">INVESTOR RELATIONS • CAPITAL • GROWTH</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760"><rect width="1200" height="760" rx="42" fill="#030712"/><polyline points="200,560 400,420 600,500 820,280 1040,160" fill="none" stroke="#3b82f6" stroke-width="18" stroke-linecap="round"/><circle cx="1040" cy="160" r="26" fill="#e0f2fe"/><circle cx="820" cy="280" r="16" fill="#93c5fd"/><circle cx="600" cy="500" r="16" fill="#93c5fd"/><rect x="260" y="150" width="680" height="280" rx="32" fill="#07101f" stroke="#2563eb" stroke-width="4" opacity=".9"/>
+<path d="M320 340h200M320 300h300M320 260h260" stroke="#60a5fa" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+<text x="120" y="700" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="800">Investor Relations</text>
+<text x="520" y="700" fill="#93c5fd" font-family="Arial,Helvetica,sans-serif" font-size="24" letter-spacing="6">CAPITAL • GROWTH • SCALE</text></svg>
