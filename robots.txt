@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flowcntrl-stack.github.io/TCBG/sitemap.xml
