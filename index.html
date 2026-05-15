@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Creative Business Group builds scalable, investment-ready business infrastructure for founders, creators, and growth-stage companies.">
+<title>The Creative Business Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F0E6;
+    --warm-white: #FDF8F2;
+    --terracotta: #C4622D;
+    --terracotta-light: #D97B4A;
+    --bark: #6B4C35;
+    --moss: #5C6B3A;
+    --moss-light: #7A8F50;
+    --sand: #E8D5B7;
+    --deep: #2C1F14;
+    --gold: #C9952A;
+    --text: #3A2A1E;
+    --text-light: #7A6555;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+background: var(–warm-white);
+color: var(–text);
+overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+position: fixed; top: 0; width: 100%; z-index: 100;
+padding: 1.2rem 3rem;
+display: flex; align-items: center; justify-content: space-between;
+background: rgba(247, 240, 230, 0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(107, 76, 53, 0.1);
+}
+.nav-logo img { height: 42px; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+font-family: ‘DM Sans’, sans-serif;
+font-size: 0.9rem; font-weight: 500; letter-spacing: 0.04em;
+color: var(–bark); text-decoration: none; text-transform: uppercase;
+transition: color 0.2s;
+}
+.nav-links a:hover { color: var(–terracotta); }
+.nav-cta {
+background: var(–terracotta); color: #fff;
+padding: 0.6rem 1.4rem; border-radius: 2px;
+font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em;
+text-decoration: none; text-transform: uppercase;
+transition: background 0.2s;
+}
+.nav-cta:hover { background: var(–bark); }
+
+/* ── HERO ── */
+.hero {
+min-height: 100vh;
+display: flex; align-items: center;
+position: relative; overflow: hidden;
+background: var(–deep);
+padding-top: 80px;
+}
+.hero-video {
+position: absolute; inset: 0;
+width: 100%; height: 100%; object-fit: cover;
+opacity: 0.35;
+}
+.hero-overlay {
+position: absolute; inset: 0;
+background: linear-gradient(135deg, rgba(44,31,20,0.85) 0%, rgba(107,76,53,0.6) 50%, rgba(92,107,58,0.4) 100%);
+}
+.hero-content {
+position: relative; z-index: 2;
+max-width: 1200px; margin: 0 auto;
+padding: 4rem 3rem;
+display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+.hero-text { animation: fadeUp 0.9s ease both; }
+.hero-eyebrow {
+font-family: ‘DM Sans’, sans-serif;
+font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em;
+text-transform: uppercase; color: var(–gold);
+margin-bottom: 1.2rem;
+}
+.hero-title {
+font-family: ‘Fraunces’, serif;
+font-size: clamp(2.8rem, 5vw, 4.2rem);
+font-weight: 300; line-height: 1.15;
+color: var(–cream);
+margin-bottom: 1.5rem;
+}
+.hero-title em { font-style: italic; color: var(–terracotta-light); }
+.hero-sub {
+font-size: 1.05rem; line-height: 1.7;
+color: rgba(247,240,230,0.75);
+max-width: 480px; margin-bottom: 2.5rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+background: var(–terracotta); color: #fff;
+padding: 0.9rem 2rem; border-radius: 2px;
+font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+text-decoration: none; text-transform: uppercase;
+transition: all 0.2s;
+border: 2px solid var(–terracotta);
+}
+.btn-primary:hover { background: transparent; color: var(–terracotta-light); }
+.btn-outline {
+background: transparent; color: var(–cream);
+padding: 0.9rem 2rem; border-radius: 2px;
+border: 2px solid rgba(247,240,230,0.4);
+font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+text-decoration: none; text-transform: uppercase;
+transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(–cream); }
+.hero-visual { animation: fadeUp 0.9s 0.2s ease both; }
+.hero-card-stack { position: relative; height: 380px; }
+.hero-card {
+position: absolute; background: rgba(247,240,230,0.08);
+backdrop-filter: blur(8px);
+border: 1px solid rgba(247,240,230,0.15);
+border-radius: 4px; padding: 1.8rem;
+}
+.hero-card:nth-child(1) { top: 0; left: 0; right: 60px; }
+.hero-card:nth-child(2) { top: 80px; left: 40px; right: 0; }
+.hero-card:nth-child(3) { bottom: 0; left: 20px; right: 20px; }
+.hero-card-label {
+font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+color: var(–gold); margin-bottom: 0.5rem;
+}
+.hero-card-value {
+font-family: ‘Fraunces’, serif; font-size: 1.8rem; font-weight: 300;
+color: var(–cream); line-height: 1.2;
+}
+.hero-card-desc { font-size: 0.85rem; color: rgba(247,240,230,0.6); margin-top: 0.4rem; }
+
+/* ── MARQUEE ── */
+.marquee-bar {
+background: var(–terracotta); overflow: hidden;
+padding: 0.75rem 0;
+}
+.marquee-track {
+display: flex; gap: 3rem; white-space: nowrap;
+animation: marquee 20s linear infinite;
+}
+.marquee-item {
+font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
+text-transform: uppercase; color: rgba(255,255,255,0.9);
+flex-shrink: 0;
+}
+.marquee-dot { color: rgba(255,255,255,0.4); }
+
+/* ── ABOUT ── */
+.about {
+padding: 7rem 3rem;
+background: var(–cream);
+max-width: 1200px; margin: 0 auto;
+}
+.section-label {
+font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+color: var(–moss); font-weight: 500; margin-bottom: 1rem;
+}
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.about-image-wrap { position: relative; }
+.about-image-wrap img {
+width: 100%; height: 480px; object-fit: cover;
+border-radius: 2px;
+}
+.about-badge {
+position: absolute; bottom: -2rem; right: -2rem;
+background: var(–terracotta); color: #fff;
+width: 120px; height: 120px; border-radius: 50%;
+display: flex; flex-direction: column; align-items: center; justify-content: center;
+text-align: center; padding: 1rem;
+}
+.about-badge-num {
+font-family: ‘Fraunces’, serif; font-size: 2rem; font-weight: 300; line-height: 1;
+}
+.about-badge-text { font-size: 0.65rem; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 0.2rem; }
+.about-text h2 {
+font-family: ‘Fraunces’, serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+font-weight: 300; line-height: 1.25; color: var(–deep);
+margin-bottom: 1.5rem;
+}
+.about-text h2 em { font-style: italic; color: var(–terracotta); }
+.about-text p {
+font-size: 1rem; line-height: 1.8; color: var(–text-light);
+margin-bottom: 1.2rem;
+}
+
+/* ── SERVICES ── */
+.services {
+padding: 7rem 3rem;
+background: var(–warm-white);
+}
+.services-inner { max-width: 1200px; margin: 0 auto; }
+.services-header { text-align: center; margin-bottom: 4rem; }
+.services-header h2 {
+font-family: ‘Fraunces’, serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+font-weight: 300; color: var(–deep); margin-top: 0.5rem;
+}
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.service-card {
+background: var(–cream); border-radius: 2px;
+padding: 2.5rem; position: relative; overflow: hidden;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border: 1px solid rgba(107,76,53,0.1);
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(44,31,20,0.12); }
+.service-card::before {
+content: ‘’; position: absolute; top: 0; left: 0;
+width: 3px; height: 0; background: var(–terracotta);
+transition: height 0.3s ease;
+}
+.service-card:hover::before { height: 100%; }
+.service-num {
+font-family: ‘Fraunces’, serif; font-size: 3rem; font-weight: 300;
+color: rgba(107,76,53,0.15); line-height: 1; margin-bottom: 1rem;
+}
+.service-card h3 {
+font-family: ‘Fraunces’, serif; font-size: 1.4rem; font-weight: 400;
+color: var(–deep); margin-bottom: 0.8rem;
+}
+.service-card p { font-size: 0.95rem; line-height: 1.7; color: var(–text-light); }
+
+/* ── AUDIENCE ── */
+.audience {
+padding: 7rem 3rem;
+background: var(–deep);
+}
+.audience-inner { max-width: 1200px; margin: 0 auto; }
+.audience-header { text-align: center; margin-bottom: 4rem; }
+.audience-header .section-label { color: var(–gold); }
+.audience-header h2 {
+font-family: ‘Fraunces’, serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+font-weight: 300; color: var(–cream);
+}
+.audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.audience-card { position: relative; overflow: hidden; border-radius: 2px; height: 380px; }
+.audience-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.audience-card:hover img { transform: scale(1.05); }
+.audience-card-overlay {
+position: absolute; inset: 0;
+background: linear-gradient(to top, rgba(44,31,20,0.9) 0%, rgba(44,31,20,0.1) 60%);
+display: flex; flex-direction: column; justify-content: flex-end;
+padding: 2rem;
+}
+.audience-card h3 {
+font-family: ‘Fraunces’, serif; font-size: 1.6rem; font-weight: 300;
+color: var(–cream); margin-bottom: 0.5rem;
+}
+.audience-card p { font-size: 0.9rem; color: rgba(247,240,230,0.7); line-height: 1.6; }
+
+/* ── PROCESS ── */
+.process {
+padding: 7rem 3rem;
+background: var(–sand);
+}
+.process-inner { max-width: 1200px; margin: 0 auto; }
+.process-header { margin-bottom: 4rem; }
+.process-header h2 {
+font-family: ‘Fraunces’, serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+font-weight: 300; color: var(–deep); margin-top: 0.5rem;
+}
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.process-step {
+padding: 2.5rem 2rem; position: relative;
+border-right: 1px solid rgba(107,76,53,0.2);
+}
+.process-step:last-child { border-right: none; }
+.step-num {
+font-family: ‘Fraunces’, serif; font-size: 4rem; font-weight: 300;
+color: var(–terracotta); opacity: 0.3; line-height: 1;
+margin-bottom: 1rem;
+}
+.process-step h3 {
+font-family: ‘Fraunces’, serif; font-size: 1.3rem; font-weight: 400;
+color: var(–deep); margin-bottom: 0.7rem;
+}
+.process-step p { font-size: 0.9rem; line-height: 1.7; color: var(–text-light); }
+
+/* ── VIDEO ── */
+.video-section {
+padding: 7rem 3rem;
+background: var(–warm-white);
+}
+.video-inner { max-width: 1200px; margin: 0 auto; }
+.video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.video-text .section-label { color: var(–moss); }
+.video-text h2 {
+font-family: ‘Fraunces’, serif; font-size: clamp(1.8rem, 3vw, 2.5rem);
+font-weight: 300; color: var(–deep); margin: 0.5rem 0 1.2rem;
+}
+.video-text p { font-size: 0.95rem; line-height: 1.8; color: var(–text-light); margin-bottom: 1.5rem; }
+.video-embed {
+position: relative; border-radius: 2px; overflow: hidden;
+aspect-ratio: 16/9;
+background: var(–deep);
+box-shadow: 0 20px 60px rgba(44,31,20,0.2);
+}
+.video-embed iframe { width: 100%; height: 100%; border: none; }
+.video-placeholder {
+width: 100%; height: 100%;
+display: flex; flex-direction: column; align-items: center; justify-content: center;
+background: linear-gradient(135deg, var(–bark), var(–deep));
+color: var(–cream); cursor: pointer;
+}
+.play-btn {
+width: 70px; height: 70px; border-radius: 50%;
+background: rgba(247,240,230,0.15); border: 2px solid rgba(247,240,230,0.4);
+display: flex; align-items: center; justify-content: center;
+margin-bottom: 1rem; transition: all 0.3s;
+}
+.play-btn:hover { background: var(–terracotta); border-color: var(–terracotta); }
+.play-btn svg { fill: var(–cream); margin-left: 4px; }
+.video-placeholder p { font-size: 0.85rem; opacity: 0.6; letter-spacing: 0.05em; }
+
+/* ── PAYMENT ── */
+.payment {
+padding: 6rem 3rem;
+background: var(–cream);
+}
+.payment-inner {
+max-width: 800px; margin: 0 auto; text-align: center;
+}
+.payment-inner .section-label { color: var(–moss); }
+.payment-inner h2 {
+font-family: ‘Fraunces’, serif; font-size: clamp(1.8rem, 3vw, 2.5rem);
+font-weight: 300; color: var(–deep); margin: 0.5rem 0 1rem;
+}
+.payment-inner p { font-size: 1rem; color: var(–text-light); line-height: 1.7; margin-bottom: 2.5rem; }
+.payment-badges {
+display: flex; align-items: center; justify-content: center;
+gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem;
+}
+.payment-badge {
+display: flex; align-items: center; gap: 0.5rem;
+background: var(–warm-white); border: 1px solid rgba(107,76,53,0.15);
+border-radius: 2px; padding: 0.6rem 1.2rem;
+font-size: 0.85rem; color: var(–text-light); font-weight: 500;
+}
+.payment-badge svg { color: var(–moss); }
+.pay-btn {
+display: inline-flex; align-items: center; gap: 0.7rem;
+background: var(–moss); color: #fff;
+padding: 1rem 2.5rem; border-radius: 2px;
+font-size: 0.95rem; font-weight: 500; letter-spacing: 0.05em;
+text-transform: uppercase; text-decoration: none;
+transition: background 0.2s; border: none; cursor: pointer;
+}
+.pay-btn:hover { background: var(–bark); }
+
+/* ── CONTACT ── */
+.contact {
+padding: 7rem 3rem;
+background: var(–warm-white);
+}
+.contact-inner { max-width: 1200px; margin: 0 auto; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+.contact-info .section-label { color: var(–terracotta); }
+.contact-info h2 {
+font-family: ‘Fraunces’, serif; font-size: clamp(1.8rem, 3vw, 2.5rem);
+font-weight: 300; color: var(–deep); margin: 0.5rem 0 1.5rem;
+}
+.contact-detail {
+display: flex; align-items: flex-start; gap: 1rem;
+margin-bottom: 1.2rem;
+}
+.contact-icon {
+width: 40px; height: 40px; border-radius: 50%;
+background: var(–sand); display: flex; align-items: center; justify-content: center;
+flex-shrink: 0;
+}
+.contact-detail-text p { font-size: 0.8rem; color: var(–text-light); text-transform: uppercase; letter-spacing: 0.08em; }
+.contact-detail-text a, .contact-detail-text span {
+font-size: 1rem; color: var(–deep); text-decoration: none; font-weight: 500;
+}
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(–text-light); }
+.form-group input, .form-group textarea, .form-group select {
+background: var(–cream); border: 1px solid rgba(107,76,53,0.2);
+border-radius: 2px; padding: 0.8rem 1rem;
+font-family: ‘DM Sans’, sans-serif; font-size: 0.95rem; color: var(–deep);
+transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+outline: none; border-color: var(–terracotta);
+}
+.form-group textarea { height: 120px; resize: vertical; }
+.form-submit {
+background: var(–terracotta); color: #fff;
+padding: 0.9rem 2rem; border-radius: 2px; border: none;
+font-family: ‘DM Sans’, sans-serif;
+font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+align-self: flex-start;
+}
+.form-submit:hover { background: var(–bark); }
+
+/* ── FOOTER ── */
+footer {
+background: var(–deep); color: rgba(247,240,230,0.6);
+padding: 3rem;
+display: flex; align-items: center; justify-content: space-between;
+flex-wrap: wrap; gap: 1rem;
+}
+footer img { height: 36px; opacity: 0.8; }
+footer p { font-size: 0.85rem; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 0.8rem; color: rgba(247,240,230,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(–cream); }
+
+/* ── CHATBOT ── */
+.chat-bubble {
+position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+}
+.chat-toggle {
+width: 60px; height: 60px; border-radius: 50%;
+background: var(–terracotta); border: none; cursor: pointer;
+display: flex; align-items: center; justify-content: center;
+box-shadow: 0 8px 24px rgba(196,98,45,0.4);
+transition: all 0.3s;
+}
+.chat-toggle:hover { background: var(–bark); transform: scale(1.05); }
+.chat-toggle svg { fill: #fff; }
+.chat-window {
+position: absolute; bottom: 75px; right: 0;
+width: 360px; height: 480px;
+background: var(–warm-white);
+border-radius: 4px; overflow: hidden;
+box-shadow: 0 20px 60px rgba(44,31,20,0.25);
+display: none; flex-direction: column;
+border: 1px solid rgba(107,76,53,0.15);
+}
+.chat-window.open { display: flex; }
+.chat-header {
+background: var(–deep); padding: 1.2rem 1.5rem;
+display: flex; align-items: center; gap: 1rem;
+}
+.chat-avatar {
+width: 36px; height: 36px; border-radius: 50%;
+background: var(–terracotta); display: flex; align-items: center; justify-content: center;
+}
+.chat-avatar svg { fill: #fff; }
+.chat-header-text h4 { font-size: 0.95rem; color: var(–cream); font-weight: 500; }
+.chat-header-text p { font-size: 0.75rem; color: rgba(247,240,230,0.5); }
+.chat-messages {
+flex: 1; overflow-y: auto; padding: 1.2rem;
+display: flex; flex-direction: column; gap: 0.8rem;
+}
+.msg {
+max-width: 80%; padding: 0.7rem 1rem; border-radius: 2px;
+font-size: 0.9rem; line-height: 1.5;
+}
+.msg.bot {
+background: var(–cream); color: var(–text);
+align-self: flex-start; border-bottom-left-radius: 0;
+}
+.msg.user {
+background: var(–terracotta); color: #fff;
+align-self: flex-end; border-bottom-right-radius: 0;
+}
+.msg.loading { background: var(–cream); align-self: flex-start; }
+.typing-dots span {
+display: inline-block; width: 6px; height: 6px;
+border-radius: 50%; background: var(–text-light);
+margin: 0 2px;
+animation: dot-bounce 1.2s infinite;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+.chat-input-row {
+padding: 1rem; border-top: 1px solid rgba(107,76,53,0.1);
+display: flex; gap: 0.5rem;
+}
+.chat-input {
+flex: 1; border: 1px solid rgba(107,76,53,0.2);
+border-radius: 2px; padding: 0.6rem 0.8rem;
+font-family: ‘DM Sans’, sans-serif; font-size: 0.9rem;
+background: var(–cream); color: var(–deep);
+}
+.chat-input:focus { outline: none; border-color: var(–terracotta); }
+.chat-send {
+background: var(–terracotta); border: none;
+border-radius: 2px; padding: 0.6rem 1rem;
+cursor: pointer; transition: background 0.2s;
+}
+.chat-send:hover { background: var(–bark); }
+.chat-send svg { fill: #fff; display: block; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes marquee {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+}
+@keyframes dot-bounce {
+0%, 80%, 100% { transform: translateY(0); }
+40% { transform: translateY(-6px); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+nav { padding: 1rem 1.5rem; }
+.nav-links { display: none; }
+.hero-content { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+.hero-visual { display: none; }
+.about-grid, .video-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+.services-grid, .audience-grid { grid-template-columns: 1fr; }
+.process-steps { grid-template-columns: 1fr 1fr; }
+.about, .services, .audience, .process, .video-section, .payment, .contact { padding: 4rem 1.5rem; }
+footer { flex-direction: column; text-align: center; }
+.chat-window { width: 300px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <div class="nav-logo">
+    <img src="./tcbg_logo.svg" alt="TCBG">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Started</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="./Intro.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Strategic Business Infrastructure</p>
+      <h1 class="hero-title">Your vision.<br><em>Built to last.</em></h1>
+      <p class="hero-sub">We help founders, creators, and growing businesses build the systems, structure, and strategy they need to thrive — so you can focus on your craft.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start Your Journey</a>
+        <a href="#services" class="btn-outline">See How We Help</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-card">
+          <p class="hero-card-label">Our Approach</p>
+          <p class="hero-card-value">Clarity<br>First</p>
+          <p class="hero-card-desc">We start by understanding where you are</p>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-label">Then We Build</p>
+          <p class="hero-card-value">Systems<br>That Scale</p>
+          <p class="hero-card-desc">Structure that grows with your ambition</p>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-label">Always</p>
+          <p class="hero-card-value">Your Craft.<br>Our Focus.</p>
+          <p class="hero-card-desc">You stay in your zone of genius</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">Strategic Planning <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Business Structure <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Operational Systems <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Growth Strategy <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Capital Readiness <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Founder Support <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Creator Economy <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Incubation Services <span class="marquee-dot">◆</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">Strategic Planning <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Business Structure <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Operational Systems <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Growth Strategy <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Capital Readiness <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Founder Support <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Creator Economy <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Incubation Services <span class="marquee-dot">◆</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-image-wrap">
+      <img src="./founders_tile.jpg" alt="Our purpose">
+      <div class="about-people-illustration">
+        <img src="./assets/people-founders.svg" alt="Founders illustration">
+      </div>
+      <div class="about-badge">
+        <span class="about-badge-num">10+</span>
+        <span class="about-badge-text">Years Building Businesses</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="section-label">Our Purpose</p>
+      <h2>We don't just advise.<br>We <em>build</em> with you.</h2>
+      <p>At The Creative Business Group, you work side by side with our team of expert consultants. Our mission is to empower businesses with innovative strategies — focusing on growth and operational excellence so you can achieve your goals.</p>
+      <p>We specialize in managing business startups, structuring, marketing, and funding — all the aspects that make a business thrive, handled with care and precision.</p>
+      <img src="./assets/people-strategic-planning.svg" alt="Strategic Planning" style="width:100%;max-width:300px;margin:1.5rem 0 1rem;">
+      <a href="tel:18774204332" class="btn-primary" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:0;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call Us Free
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <p class="section-label">What We Do</p>
+      <h2>Built around your goals</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="./assets/people-governance.svg" alt="Governance" style="width:80px;height:80px;margin-bottom:1rem;">
+        <p class="service-num">01</p>
+        <h3>Governance</h3>
+        <p>Operational structure, automation, compliance thinking, and business integrity. We build the rules your business runs by.</p>
+      </div>
+      <div class="service-card">
+        <img src="./assets/people-incubation.svg" alt="Incubation" style="width:80px;height:80px;margin-bottom:1rem;">
+        <p class="service-num">02</p>
+        <h3>Incubation</h3>
+        <p>Strategic development, launch pathways, and growth planning for emerging ventures ready to take the next step.</p>
+      </div>
+      <div class="service-card">
+        <img src="./assets/people-investor-relations.svg" alt="Capital Readiness" style="width:80px;height:80px;margin-bottom:1rem;">
+        <p class="service-num">03</p>
+        <h3>Capital Readiness</h3>
+        <p>Presentation strategy, investor relations, and secure access to high-level materials when it's time to raise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+
+<section class="audience">
+  <div class="audience-inner">
+    <div class="audience-header">
+      <p class="section-label">Who We Serve</p>
+      <h2 style="color:var(--cream)">We build for ambitious people</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <img src="./founders_audience_tile.jpg" alt="Founders">
+        <div class="audience-card-overlay">
+          <h3>Founders</h3>
+          <p>Build clarity, operational structure, and momentum from idea to execution.</p>
+        </div>
+      </div>
+      <div class="audience-card">
+        <img src="./creators_audience_tile.jpg" alt="Creators">
+        <div class="audience-card-overlay">
+          <h3>Creators</h3>
+          <p>Turn your vision and IP into organized business infrastructure and revenue.</p>
+        </div>
+      </div>
+      <div class="audience-card">
+        <img src="./businesses_audience_tile.jpg" alt="Growing Businesses">
+        <div class="audience-card-overlay">
+          <h3>Growing Businesses</h3>
+          <p>Prepare for expansion, stronger governance, and capital conversations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="process-header">
+      <p class="section-label">How It Works</p>
+      <h2>From vision to reality</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <img src="./assets/people-clarity.svg" alt="Discover" style="width:64px;height:64px;margin-bottom:0.5rem;">
+        <p class="step-num">01</p>
+        <h3>Discover</h3>
+        <p>We understand your idea, market, and current state — without judgment, just curiosity.</p>
+      </div>
+      <div class="process-step">
+        <img src="./assets/people-structure.svg" alt="Structure" style="width:64px;height:64px;margin-bottom:0.5rem;">
+        <p class="step-num">02</p>
+        <h3>Structure</h3>
+        <p>We organize your business model, offer, operations, and priorities into a clear plan.</p>
+      </div>
+      <div class="process-step">
+        <img src="./assets/people-creators.svg" alt="Build" style="width:64px;height:64px;margin-bottom:0.5rem;">
+        <p class="step-num">03</p>
+        <h3>Build</h3>
+        <p>We create the visible and operational systems needed to move forward with confidence.</p>
+      </div>
+      <div class="process-step">
+        <img src="./assets/people-scale.svg" alt="Scale" style="width:64px;height:64px;margin-bottom:0.5rem;">
+        <p class="step-num">04</p>
+        <h3>Scale</h3>
+        <p>We prepare you for lead flow, capital readiness, and sustainable long-term growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+
+<section class="video-section">
+  <div class="video-inner">
+    <div class="video-grid">
+      <div class="video-text">
+        <p class="section-label">See It In Action</p>
+        <h2>What working with TCBG looks like</h2>
+        <p>We bring strategic clarity, operational structure, and scalable infrastructure to organizations ready to move forward. Watch how we turn vision into structured business momentum.</p>
+        <a href="#contact" class="btn-primary">Book a Free Session</a>
+      </div>
+      <div class="video-embed">
+        <div class="video-placeholder" onclick="this.innerHTML='<iframe src=\'https://blobby.wsimg.com/getty/videos/2216050324\' allow=\'autoplay\' allowfullscreen></iframe>'">
+          <div class="play-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p>Watch Our Story</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+
+<section class="payment" id="payment">
+  <div class="payment-inner">
+    <p class="section-label">Quick & Secure Payment</p>
+    <h2>Ready to invest in your business?</h2>
+    <p>Make a secure payment for your consultation, retainer, or service package. All transactions are protected and processed through our secure payment system.</p>
+    <div class="payment-badges">
+      <div class="payment-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        Secure & Encrypted
+      </div>
+      <div class="payment-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+        Instant Confirmation
+      </div>
+      <div class="payment-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+        All Major Cards Accepted
+      </div>
+    </div>
+    <button class="pay-btn" onclick="alert('Payment portal coming soon. Call 1-877-420-4332 to complete payment.')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+      Make a Payment
+    </button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-label">Get In Touch</p>
+        <h2>Let's build something worth building</h2>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--terracotta)"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <p>Phone</p>
+            <a href="tel:18774204332">1-877-420-4332</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--terracotta)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <p>Email</p>
+            <a href="mailto:info@thecreativebusinessgroup.com">info@thecreativebusinessgroup.com</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--terracotta)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <p>Address</p>
+            <span>1050 Crown Pointe Pkwy, Dunwoody, GA 30338</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="jane@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>I'm a...</label>
+            <select>
+              <option>Founder / Entrepreneur</option>
+              <option>Creator / Artist</option>
+              <option>Growing Business</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us a bit about what you're building..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <img src="./tcbg_logo.svg" alt="TCBG">
+  <p>© 2026 The Creative Business Group Inc. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="tel:18774204332">877-420-4332</a>
+    <a href="mailto:info@thecreativebusinessgroup.com">Email Us</a>
+  </div>
+</footer>
+
+<!-- CHATBOT -->
+
+<div class="chat-bubble">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-avatar">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      </div>
+      <div class="chat-header-text">
+        <h4>TCBG Assistant</h4>
+        <p>Usually replies instantly</p>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Hi! 👋 I'm here to help you learn about The Creative Business Group. What can I help you with today?</div>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Ask me anything..." onkeypress="if(event.key==='Enter')sendMessage()">
+      <button class="chat-send" onclick="sendMessage()">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-toggle" onclick="toggleChat()">
+    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+  </button>
+</div>
+
+<script>
+  function toggleChat() {
+    const w = document.getElementById('chatWindow');
+    w.classList.toggle('open');
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const messages = document.getElementById('chatMessages');
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Add user message
+    messages.innerHTML += `<div class="msg user">${text}</div>`;
+    input.value = '';
+    messages.scrollTop = messages.scrollHeight;
+
+    // Loading indicator
+    const loadingId = 'loading-' + Date.now();
+    messages.innerHTML += `<div class="msg loading" id="${loadingId}"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 300,
+          system: `You are a warm, helpful assistant for The Creative Business Group (TCBG). 
+TCBG helps founders, creators, and growing businesses build structure, strategy, and systems so they can focus on their craft.
+Services: Governance (operational structure), Incubation (growth planning), Capital Readiness (investor relations).
+Phone: 1-877-420-4332. Email: info@thecreativebusinessgroup.com. Address: 1050 Crown Pointe Pkwy, Dunwoody, GA 30338.
+Free consultation available. Keep responses warm, brief, and encouraging. Always invite them to book a free session or call.`,
+          messages: [{ role: 'user', content: text }]
+        })
+      });
+
+      const data = await response.json();
+      const reply = data.content?.[0]?.text || "Thanks for reaching out! Please call us at 1-877-420-4332 and we'll be happy to help.";
+      document.getElementById(loadingId).remove();
+      messages.innerHTML += `<div class="msg bot">${reply}</div>`;
+    } catch (e) {
+      document.getElementById(loadingId).remove();
+      messages.innerHTML += `<div class="msg bot">Thanks for your message! Give us a call at 1-877-420-4332 and we'll get you taken care of right away. 😊</div>`;
+    }
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message Sent!';
+    btn.style.background = 'var(--moss)';
+    setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 3000);
+  }
+</script>
+
+</body>
+</html>
