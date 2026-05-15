@@ -315,6 +315,7 @@ width: 100%; height: 100%;
 display: flex; flex-direction: column; align-items: center; justify-content: center;
 background: linear-gradient(135deg, var(–bark), var(–deep));
 color: var(–cream); cursor: pointer;
+position: relative;
 }
 .play-btn {
 width: 70px; height: 70px; border-radius: 50%;
@@ -753,11 +754,13 @@ footer { flex-direction: column; text-align: center; }
         <a href="#contact" class="btn-primary">Book a Free Session</a>
       </div>
       <div class="video-embed">
-        <div class="video-placeholder" onclick="this.innerHTML='<iframe src=\'https://blobby.wsimg.com/getty/videos/2216050324\' allow=\'autoplay\' allowfullscreen></iframe>'">
-          <div class="play-btn">
-            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <div class="video-placeholder" style="background-image:url('./growth_scale_strip.jpg');background-size:cover;background-position:center;" onclick="this.style.backgroundImage='none';this.innerHTML='<video controls autoplay style=\'width:100%;height:100%;\'><source src=\'./Intro.mp4\' type=\'video/mp4\'></video>'">
+          <div style="position:absolute;inset:0;background:rgba(44,31,20,0.55);display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            <div class="play-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <p style="color:rgba(247,240,230,0.8);font-size:0.85rem;letter-spacing:0.05em;margin-top:0.5rem;">Watch Our Story</p>
           </div>
-          <p>Watch Our Story</p>
         </div>
       </div>
     </div>
