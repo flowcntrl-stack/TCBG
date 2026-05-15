@@ -1,0 +1,1474 @@
+Test
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Creative Business Group builds scalable, investment-ready business infrastructure for founders, creators, and growth-stage companies.">
+<title>The Creative Business Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F0E6;
+    --warm-white: #F0E8DA;
+    --terracotta: #C4622D;
+    --terracotta-light: #D97B4A;
+    --bark: #6B4C35;
+    --moss: #5C6B3A;
+    --sand: #D9C4A0;
+    --deep: #1E1209;
+    --deep2: #2C1F14;
+    --gold: #C9952A;
+    --text: #2A1C10;
+    --text-light: #5C4433;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 1rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(30,18,9,0.93);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,149,42,0.2);
+  }
+  .nav-logo img { height: 44px; object-fit: contain; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+    color: rgba(247,240,230,0.75); text-decoration: none; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--terracotta); color: #fff;
+    padding: 0.6rem 1.4rem; border-radius: 2px;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+    text-decoration: none; text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--bark); }
+ /* HERO */
+  .hero {
+    min-height: 100vh;
+    position: relative; overflow: hidden;
+    display: flex; align-items: center;
+    background: var(--deep);
+    padding-top: 80px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1600&q=80');
+    background-size: cover; background-position: center;
+    opacity: 0.18;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(30,18,9,0.92) 0%, rgba(107,76,53,0.7) 60%, rgba(92,107,58,0.5) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto;
+    padding: 5rem 3rem;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center;
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 1px; background: var(--gold);
+  }
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3rem, 5.5vw, 4.8rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--cream); margin-bottom: 1.5rem;
+  }
+  .hero-title em { font-style: italic; color: var(--terracotta-light); }
+  .hero-sub {
+    font-size: 1.05rem; line-height: 1.75;
+    color: rgba(247,240,230,0.72);
+    max-width: 500px; margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--terracotta); color: #fff;
+    padding: 0.9rem 2rem; border-radius: 2px;
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.05em;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.2s; border: 2px solid var(--terracotta);
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary:hover { background: transparent; color: var(--terracotta-light); border-color: var(--terracotta-light); }
+  .btn-ghost {
+    background: transparent; color: var(--cream);
+    padding: 0.9rem 2rem; border-radius: 2px;
+    border: 2px solid rgba(247,240,230,0.35);
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.05em;
+    text-decoration: none; text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--cream); }
+ /* Hero photo collage */
+  .hero-visual { position: relative; height: 420px; }
+  .hero-photo-main {
+    position: absolute; top: 0; left: 0; right: 40px; bottom: 40px;
+    border-radius: 2px; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .hero-photo-main img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-photo-accent {
+    position: absolute; bottom: 0; right: 0;
+    width: 55%; height: 55%;
+    border-radius: 2px; overflow: hidden;
+    border: 3px solid var(--deep);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .hero-photo-accent img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-stat {
+    position: absolute; top: 20px; right: -10px;
+    background: var(--terracotta); color: #fff;
+    padding: 0.8rem 1.2rem; border-radius: 2px;
+    text-align: center;
+  }
+  .hero-stat-num {
+    font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 300; line-height: 1;
+  }
+  .hero-stat-label { font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85; }
+/* MARQUEE */
+  .marquee-bar { background: var(--terracotta); overflow: hidden; padding: 0.8rem 0; }
+  .marquee-track {
+    display: flex; gap: 3rem; white-space: nowrap;
+    animation: marquee 24s linear infinite;
+  }
+  .marquee-item {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.92);
+    flex-shrink: 0;
+  }
+  .marquee-sep { color: rgba(255,255,255,0.4); margin: 0 0.5rem; }
+
+  /* SECTION SHARED */
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--moss); font-weight: 500; margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .section-label::before {
+    content: ''; display: block; /* ABOUT */
+  .about { background: var(--deep2); padding: 8rem 3rem; }
+  .about-inner { max-width: 1200px; margin: 0 auto; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .about-photos { position: relative; height: 520px; }
+  .about-photo-1 {
+    position: absolute; top: 0; left: 0; right: 80px; bottom: 60px;
+    border-radius: 2px; overflow: hidden;
+  }
+  .about-photo-1 img { width: 100%; height: 100%; object-fit: cover; }
+  .about-photo-2 {
+    position: absolute; bottom: 0; right: 0;
+    width: 58%; height: 55%;
+    border-radius: 2px; overflow: hidden;
+    border: 4px solid var(--deep2);
+  }
+  .about-photo-2 img { width: 100%; height: 100%; object-fit: cover; }
+  .about-badge {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    background: var(--gold); color: var(--deep);
+    width: 110px; height: 110px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; z-index: 2;
+    border: 4px solid var(--deep2);
+  }
+  .about-badge-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 400; line-height: 1; }
+  .about-badge-text { font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 0.2rem; font-weight: 600; }
+  .about-text .section-label { color: var(--gold); }
+  .about-text .section-label::before { background: var(--gold); }
+  .about-text h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300; line-height: 1.2; color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+  .about-text h2 em { font-style: italic; color: var(--terracotta-light); }
+  .about-text p { font-size: 1rem; line-height: 1.85; color: rgba(247,240,230,0.72); margin-bottom: 1.2rem; }
+
+    width: 24px; height: 1px; background: var(--moss);
+  }
+/* SERVICES */
+  .services { background: var(--warm-white); padding: 8rem 3rem; }
+  .services-inner { max-width: 1200px; margin: 0 auto; }
+  .services-header { margin-bottom: 4rem; }
+  .services-header h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300; color: var(--deep); margin-top: 0.5rem;
+  }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .service-card {
+    background: #fff; border-radius: 2px; overflow: hidden;
+    border: 1px solid rgba(107,76,53,0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(44,31,20,0.14); }
+  .service-img { height: 220px; overflow: hidden; }
+  .service-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .service-card:hover .service-img img { transform: scale(1.05); }
+  .service-body { padding: 2rem; }
+  .service-num {
+    font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 300;
+    color: rgba(196,98,45,0.2); line-height: 1; margin-bottom: 0.5rem;
+  }
+  .service-body h3 {
+    font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 400;
+    color: var(--deep); margin-bottom: 0.7rem;
+  }
+  .service-body p { font-size: 0.92rem; line-height: 1.7; color: var(--text-light); }
+  /* AUDIENCE */
+  .audience { background: var(--deep); padding: 8rem 3rem; }
+  .audience-inner { max-width: 1200px; margin: 0 auto; }
+  .audience-header { text-align: center; margin-bottom: 4rem; }
+  .audience-header .section-label { justify-content: center; color: var(--gold); }
+  .audience-header .section-label::before { background: var(--gold); }
+  .audience-header h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300; color: var(--cream);
+  }
+  .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .audience-card { position: relative; overflow: hidden; border-radius: 2px; height: 420px; cursor: pointer; }
+  .audience-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .audience-card:hover img { transform: scale(1.08); }
+  .audience-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(30,18,9,0.92) 0%, rgba(30,18,9,0.2) 55%, transparent 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 2.2rem;
+  }
+  .audience-tag {
+    display: inline-block; background: var(--terracotta); color: #fff;
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.3rem 0.8rem; border-radius: 1px; margin-bottom: 0.7rem;
+  }
+  .audience-card h3 {
+    font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 300;
+    color: var(--cream); margin-bottom: 0.5rem;
+  }
+  .audience-card p { font-size: 0.88rem; color: rgba(247,240,230,0.75); line-height: 1.6; }
+
+  /* PROCESS */
+  .process { background: var(--sand); padding: 8rem 3rem; }
+  .process-inner { max-width: 1200px; margin: 0 auto; }
+  .process-header { margin-bottom: 5rem; }
+  .process-header h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300; color: var(--deep);
+  }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  .process-step { position: relative; }
+  .process-step-img {
+    height: 200px; border-radius: 2px; overflow: hidden; margin-bottom: 1.5rem;
+  }
+  .process-step-img img { width: 100%; height: 100%; object-fit: cover; }
+  .step-num {
+    font-family: 'Fraunces', serif; font-size: 3.5rem; font-weight: 300;
+    color: var(--terracotta); opacity: 0.35; line-height: 1; margin-bottom: 0.5rem;
+  }
+  .process-step h3 {
+    font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 400;
+    color: var(--deep); margin-bottom: 0.6rem;
+  }
+  .process-step p { font-size: 0.88rem; line-height: 1.7; color: var(--text-light); }
+
+  /* VIDEO */
+  .video-section { background: var(--deep2); padding: 8rem 3rem; }
+  .video-inner { max-width: 1200px; margin: 0 auto; }
+  .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .video-text .section-label { color: var(--gold); }
+  .video-text .section-label::before { background: var(--gold); }
+  .video-text h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 300; color: var(--cream); margin: 0.5rem 0 1.2rem;
+  }
+  .video-text p { font-size: 0.95rem; line-height: 1.8; color: rgba(247,240,230,0.7); margin-bottom: 2rem; }
+  .video-embed {
+    position: relative; border-radius: 2px; overflow: hidden;
+    aspect-ratio: 16/9;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  }
+  .video-thumb {
+    position: relative; width: 100%; height: 100%; cursor: pointer;
+    background: var(--deep);
+  }
+  .video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+  .video-play-overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: rgba(30,18,9,0.45);
+  }
+  .play-ring {
+    width: 76px; height: 76px; border-radius: 50%;
+    border: 2px solid rgba(247,240,230,0.6);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem; transition: all 0.3s;
+    background: rgba(196,98,45,0.3);
+  }
+  .video-thumb:hover .play-ring { background: var(--terracotta); border-color: var(--terracotta); transform: scale(1.08); }
+  .play-ring svg { fill: #fff; margin-left: 5px; }
+  .video-play-overlay p { color: rgba(247,240,230,0.8); font-size: 0.85rem; letter-spacing: 0.05em; }
+
+  /* PAYMENT */
+  .payment { background: var(--cream); padding: 7rem 3rem; }
+  .payment-inner { max-width: 860px; margin: 0 auto; }
+  .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .payment-text .section-label { color: var(--moss); }
+  .payment-text h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 300; color: var(--deep); margin: 0.5rem 0 1rem;
+  }
+  .payment-text p { font-size: 0.95rem; line-height: 1.75; color: var(--text-light); margin-bottom: 1.5rem; }
+  .payment-card {
+    background: var(--deep2); border-radius: 4px; padding: 2.5rem;
+    text-align: center;
+  }
+  .payment-icon {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(196,98,45,0.2); border: 2px solid var(--terracotta);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.2rem;
+  }
+  .payment-icon svg { fill: var(--terracotta); }
+  .payment-card h3 {
+    font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 300;
+    color: var(--cream); margin-bottom: 0.8rem;
+  }
+  .payment-card p { font-size: 0.85rem; color: rgba(247,240,230,0.6); line-height: 1.6; margin-bottom: 1.5rem; }
+  .payment-badges { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+  .payment-badge {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; color: rgba(247,240,230,0.6);
+  }
+  .payment-badge svg { fill: var(--moss); flex-shrink: 0; }
+  .pay-btn {
+    width: 100%;
+    background: var(--moss); color: #fff;
+    padding: 0.9rem; border-radius: 2px; border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  }
+  .pay-btn:hover { background: var(--bark); }
+
+  /* CONTACT */
+  .contact { background: var(--warm-white); padding: 8rem 3rem; }
+  .contact-inner { max-width: 1200px; margin: 0 auto; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; }
+  .contact-photo { border-radius: 2px; overflow: hidden; height: 100%; min-height: 400px; }
+  .contact-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .contact-info { display: flex; flex-direction: column; justify-content: center; }
+  .contact-info .section-label { color: var(--terracotta); }
+  .contact-info .section-label::before { background: var(--terracotta); }
+  .contact-info h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 300; color: var(--deep); margin: 0.5rem 0 2rem;
+  }
+  .contact-detail {
+    display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem;
+  }
+  .contact-icon {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--sand); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-detail-label { font-size: 0.72rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+  .contact-detail-value { font-size: 0.98rem; color: var(--deep); font-weight: 500; text-decoration: none; }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+  .form-group label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); }
+  .form-group input, .form-group textarea, .form-group select {
+    background: #fff; border: 1.5px solid rgba(107,76,53,0.2);
+    border-radius: 2px; padding: 0.75rem 1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.93rem; color: var(--deep);
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    outline: none; border-color: var(--terracotta);
+  }
+  .form-group textarea { height: 110px; resize: vertical; }
+  .form-submit {
+    background: var(--terracotta); color: #fff;
+    padding: 0.85rem 2rem; border-radius: 2px; border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--bark); }
+  /* FOOTER */
+  footer {
+    background: var(--deep); padding: 2.5rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(201,149,42,0.2);
+  }
+  footer img { height: 36px; opacity: 0.9; }
+  footer p { font-size: 0.82rem; color: rgba(247,240,230,0.45); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.8rem; color: rgba(247,240,230,0.45); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* CHATBOT */
+  .chat-bubble { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; }
+  .chat-toggle {
+    width: 62px; height: 62px; border-radius: 50%;
+    background: var(--terracotta); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 28px rgba(196,98,45,0.45);
+    transition: all 0.3s; position: relative;
+  }
+  .chat-toggle:hover { background: var(--bark); transform: scale(1.06); }
+  .chat-toggle svg { fill: #fff; }
+  .chat-badge {
+    position: absolute; top: -4px; right: -4px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--deep);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; color: var(--deep); font-weight: 700;
+  }
+  .chat-window {
+    position: absolute; bottom: 78px; right: 0;
+    width: 370px; height: 500px;
+    background: var(--warm-white);
+    border-radius: 4px; overflow: hidden;
+    box-shadow: 0 24px 64px rgba(30,18,9,0.35);
+    display: none; flex-direction: column;
+    border: 1px solid rgba(107,76,53,0.2);
+    animation: slideUp 0.25s ease;
+  }
+  .chat-window.open { display: flex; }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .chat-header {
+    background: var(--deep); padding: 1.2rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(201,149,42,0.2);
+  }
+  .chat-header-left { display: flex; align-items: center; gap: 0.8rem; }
+  .chat-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--terracotta); display: flex; align-items: center; justify-content: center;
+    border: 2px solid var(--gold);
+  }
+  .chat-avatar svg { fill: #fff; }
+  .chat-header-info h4 { font-size: 0.92rem; color: var(--cream); font-weight: 500; }
+  .chat-header-info p { font-size: 0.72rem; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; }
+  .chat-header-info p::before { content: '●'; font-size: 0.5rem; color: #5CBA47; }
+  .chat-close { background: none; border: none; cursor: pointer; padding: 0.2rem; }
+  .chat-close svg { fill: rgba(247,240,230,0.45); transition: fill 0.2s; }
+  .chat-close:hover svg { fill: var(--cream); }
+  .chat-messages {
+    flex: 1; overflow-y: auto; padding: 1.2rem;
+    display: flex; flex-direction: column; gap: 0.9rem;
+    background: var(--warm-white);
+  }
+  .msg {
+    max-width: 82%; padding: 0.75rem 1rem; border-radius: 3px;
+    font-size: 0.88rem; line-height: 1.55;
+  }
+  .msg.bot {
+    background: #fff; color: var(--text);
+    align-self: flex-start;
+    border: 1px solid rgba(107,76,53,0.15);
+    border-bottom-left-radius: 0;
+  }
+  .msg.user {
+    background: var(--terracotta); color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+  }
+  .typing-dots { display: flex; align-items: center; gap: 4px; padding: 0.2rem 0; }
+  .typing-dots span {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--text-light);
+    animation: dot 1.3s infinite;
+  }
+  .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes dot { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-7px)} }
+  .chat-input-row {
+    padding: 0.9rem 1rem; border-top: 1px solid rgba(107,76,53,0.15);
+    display: flex; gap: 0.5rem; background: #fff;
+  }
+  .chat-input {
+    flex: 1; border: 1.5px solid rgba(107,76,53,0.2);
+    border-radius: 2px; padding: 0.6rem 0.85rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    background: var(--warm-white); color: var(--deep);
+    transition: border-color 0.2s;
+  }
+  .chat-input:focus { outline: none; border-color: var(--terracotta); }
+  .chat-send {
+    background: var(--terracotta); border: none;
+    border-radius: 2px; padding: 0.6rem 1rem;
+    cursor: pointer; transition: background 0.2s; flex-shrink: 0;
+  }
+  .chat-send:hover { background: var(--bark); }
+  .chat-send svg { fill: #fff; display: block; }
+
+  .chat-send svg { fill: #fff; display: block; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero-content { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .hero-visual { display: none; }
+    .about-grid, .video-grid, .contact-grid, .payment-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid, .audience-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .about, .services, .audience, .process, .video-section, .payment, .contact { padding: 5rem 1.5rem; }
+    footer { flex-direction: column; text-align: center; }
+    .chat-window { width: 320px; }
+    .contact-photo { display: none; }
+  }
+</style>
+</head>
+<body>
+
+  .chat-send svg { fill: #fff; display: block; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero-content { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .hero-visual { display: none; }
+    .about-grid, .video-grid, .contact-grid, .payment-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid, .audience-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .about, .services, .audience, .process, .video-section, .payment, .contact { padding: 5rem 1.5rem; }
+    footer { flex-direction: column; text-align: center; }
+    .chat-window { width: 320px; }
+    .contact-photo { display: none; }
+  }
+</style>
+</head>
+<body>
+
+  /* SECTION SHARED */
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--moss); font-weight: 500; margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 24px; height: 1px; background: var(--moss);
+  }
+
+  /* ABOUT */
+  .about { background: var(--deep2); padding: 8rem 3rem; }
+  .about-inner { max-width: 1200px; margin: 0 auto; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .about-photos { position: relative; height: 520px; }
+  .about-photo-1 {
+    position: absolute; top: 0; left: 0; right: 80px; bottom: 60px;
+    border-radius: 2px; overflow: hidden;
+  }
+  .about-photo-1 img { width: 100%; height: 100%; object-fit: cover; }
+  .about-photo-2 {
+    position: absolute; bottom: 0; right: 0;
+    width: 58%; height: 55%;
+    border-radius: 2px; overflow: hidden;
+    border: 4px solid var(--deep2);
+  }
+  .about-photo-2 img { width: 100%; height: 100%; object-fit: cover; }
+  .about-badge {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    background: var(--gold); color: var(--deep);
+    width: 110px; height: 110px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; z-index: 2;
+    border: 4px solid var(--deep2);
+  }
+  .about-badge-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 400; line-height: 1; }
+  .about-badge-text { font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 0.2rem; font-weight: 600; }
+  .about-text .section-label { color: var(--gold); }
+  .about-text .section-label::before { background: var(--gold); }
+  .about-text h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300; line-height: 1.2; color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+  .about-text h2 em { font-style: italic; color: var(--terracotta-light); }
+  .about-text p { font-size: 1rem; line-height: 1.85; color: rgba(247,240,230,0.72); margin-bottom: 1.2rem; }
+
+  /* SERVICES */
+  .services { background: var(--warm-white); padding: 8rem 3rem; }
+  .services-inner { max-width: 1200px; margin: 0 auto; }
+  .services-header { margin-bottom: 4rem; }
+  .services-header h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300; color: var(--deep); margin-top: 0.5rem;
+  }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .service-card {
+    background: #fff; border-radius: 2px; overflow: hidden;
+    border: 1px solid rgba(107,76,53,0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(44,31,20,0.14); }
+  .service-img { height: 220px; overflow: hidden; }
+  .service-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .service-card:hover .service-img img { transform: scale(1.05); }
+  .service-body { padding: 2rem; }
+  .service-num {
+    font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 300;
+    color: rgba(196,98,45,0.2); line-height: 1; margin-bottom: 0.5rem;
+  }
+  .service-body h3 {
+    font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 400;
+    color: var(--deep); margin-bottom: 0.7rem;
+  }
+  .service-body p { font-size: 0.92rem; line-height: 1.7; color: var(--text-light); }
+
+  /* AUDIENCE */
+  .audience { background: var(--deep); padding: 8rem 3rem; }
+  .audience-inner { max-width: 1200px; margin: 0 auto; }
+  .audience-header { text-align: center; margin-bottom: 4rem; }
+  .audience-header .section-label { justify-content: center; color: var(--gold); }
+  .audience-header .section-label::before { background: var(--gold); }
+  .audience-header h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300; color: var(--cream);
+  }
+  .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .audience-card { position: relative; overflow: hidden; border-radius: 2px; height: 420px; cursor: pointer; }
+  .audience-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .audience-card:hover img { transform: scale(1.08); }
+  .audience-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(30,18,9,0.92) 0%, rgba(30,18,9,0.2) 55%, transparent 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 2.2rem;
+  }
+  .audience-tag {
+    display: inline-block; background: var(--terracotta); color: #fff;
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.3rem 0.8rem; border-radius: 1px; margin-bottom: 0.7rem;
+  }
+  .audience-card h3 {
+    font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 300;
+    color: var(--cream); margin-bottom: 0.5rem;
+  }
+  .audience-card p { font-size: 0.88rem; color: rgba(247,240,230,0.75); line-height: 1.6; }
+ 
+ /* PROCESS */
+  .process { background: var(--sand); padding: 8rem 3rem; }
+  .process-inner { max-width: 1200px; margin: 0 auto; }
+  .process-header { margin-bottom: 5rem; }
+  .process-header h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300; color: var(--deep);
+  }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  .process-step { position: relative; }
+  .process-step-img {
+    height: 200px; border-radius: 2px; overflow: hidden; margin-bottom: 1.5rem;
+  }
+  .process-step-img img { width: 100%; height: 100%; object-fit: cover; }
+  .step-num {
+    font-family: 'Fraunces', serif; font-size: 3.5rem; font-weight: 300;
+    color: var(--terracotta); opacity: 0.35; line-height: 1; margin-bottom: 0.5rem;
+  }
+  .process-step h3 {
+    font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 400;
+    color: var(--deep); margin-bottom: 0.6rem;
+  }
+  .process-step p { font-size: 0.88rem; line-height: 1.7; color: var(--text-light); }
+
+  /* VIDEO */
+  .video-section { background: var(--deep2); padding: 8rem 3rem; }
+  .video-inner { max-width: 1200px; margin: 0 auto; }
+  .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .video-text .section-label { color: var(--gold); }
+  .video-text .section-label::before { background: var(--gold); }
+  .video-text h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 300; color: var(--cream); margin: 0.5rem 0 1.2rem;
+  }
+  .video-text p { font-size: 0.95rem; line-height: 1.8; color: rgba(247,240,230,0.7); margin-bottom: 2rem; }
+  .video-embed {
+    position: relative; border-radius: 2px; overflow: hidden;
+    aspect-ratio: 16/9;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  }
+  .video-thumb {
+    position: relative; width: 100%; height: 100%; cursor: pointer;
+    background: var(--deep);
+  }
+  .video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+  .video-play-overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: rgba(30,18,9,0.45);
+  }
+  .play-ring {
+    width: 76px; height: 76px; border-radius: 50%;
+    border: 2px solid rgba(247,240,230,0.6);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem; transition: all 0.3s;
+    background: rgba(196,98,45,0.3);
+  }
+  .video-thumb:hover .play-ring { background: var(--terracotta); border-color: var(--terracotta); transform: scale(1.08); }
+  .play-ring svg { fill: #fff; margin-left: 5px; }
+  .video-play-overlay p { color: rgba(247,240,230,0.8); font-size: 0.85rem; letter-spacing: 0.05em; }
+
+  /* PAYMENT */
+  .payment { background: var(--cream); padding: 7rem 3rem; }
+  .payment-inner { max-width: 860px; margin: 0 auto; }
+  .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .payment-text .section-label { color: var(--moss); }
+  .payment-text h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 300; color: var(--deep); margin: 0.5rem 0 1rem;
+  }
+  .payment-text p { font-size: 0.95rem; line-height: 1.75; color: var(--text-light); margin-bottom: 1.5rem; }
+  .payment-card {
+    background: var(--deep2); border-radius: 4px; padding: 2.5rem;
+    text-align: center;
+  }
+  .payment-icon {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(196,98,45,0.2); border: 2px solid var(--terracotta);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.2rem;
+  }
+  .payment-icon svg { fill: var(--terracotta); }
+  .payment-card h3 {
+    font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 300;
+    color: var(--cream); margin-bottom: 0.8rem;
+  }
+  .payment-card p { font-size: 0.85rem; color: rgba(247,240,230,0.6); line-height: 1.6; margin-bottom: 1.5rem; }
+  .payment-badges { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+  .payment-badge {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; color: rgba(247,240,230,0.6);
+  }
+  .payment-badge svg { fill: var(--moss); flex-shrink: 0; }
+  .pay-btn {
+    width: 100%;
+    background: var(--moss); color: #fff;
+    padding: 0.9rem; border-radius: 2px; border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  }
+  .pay-btn:hover { background: var(--bark); }
+
+  /* CONTACT */
+  .contact { background: var(--warm-white); padding: 8rem 3rem; }
+  .contact-inner { max-width: 1200px; margin: 0 auto; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; }
+  .contact-photo { border-radius: 2px; overflow: hidden; height: 100%; min-height: 400px; }
+  .contact-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .contact-info { display: flex; flex-direction: column; justify-content: center; }
+  .contact-info .section-label { color: var(--terracotta); }
+  .contact-info .section-label::before { background: var(--terracotta); }
+  .contact-info h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 300; color: var(--deep); margin: 0.5rem 0 2rem;
+  }
+  .contact-detail {
+    display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem;
+  }
+  .contact-icon {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--sand); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-detail-label { font-size: 0.72rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+  .contact-detail-value { font-size: 0.98rem; color: var(--deep); font-weight: 500; text-decoration: none; }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+  .form-group label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); }
+  .form-group input, .form-group textarea, .form-group select {
+    background: #fff; border: 1.5px solid rgba(107,76,53,0.2);
+    border-radius: 2px; padding: 0.75rem 1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.93rem; color: var(--deep);
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    outline: none; border-color: var(--terracotta);
+  }
+  .form-group textarea { height: 110px; resize: vertical; }
+  .form-submit {
+    background: var(--terracotta); color: #fff;
+    padding: 0.85rem 2rem; border-radius: 2px; border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--bark); }
+
+  /* FOOTER */
+  footer {
+    background: var(--deep); padding: 2.5rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(201,149,42,0.2);
+  }
+  footer img { height: 36px; opacity: 0.9; }
+  footer p { font-size: 0.82rem; color: rgba(247,240,230,0.45); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.8rem; color: rgba(247,240,230,0.45); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* CHATBOT */
+  .chat-bubble { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; }
+  .chat-toggle {
+    width: 62px; height: 62px; border-radius: 50%;
+    background: var(--terracotta); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 28px rgba(196,98,45,0.45);
+    transition: all 0.3s; position: relative;
+  }
+  .chat-toggle:hover { background: var(--bark); transform: scale(1.06); }
+  .chat-toggle svg { fill: #fff; }
+  .chat-badge {
+    position: absolute; top: -4px; right: -4px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--deep);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; color: var(--deep); font-weight: 700;
+  }
+  .chat-window {
+    position: absolute; bottom: 78px; right: 0;
+    width: 370px; height: 500px;
+    background: var(--warm-white);
+    border-radius: 4px; overflow: hidden;
+    box-shadow: 0 24px 64px rgba(30,18,9,0.35);
+    display: none; flex-direction: column;
+    border: 1px solid rgba(107,76,53,0.2);
+    animation: slideUp 0.25s ease;
+  }
+  .chat-window.open { display: flex; }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .chat-header {
+    background: var(--deep); padding: 1.2rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(201,149,42,0.2);
+  }
+  .chat-header-left { display: flex; align-items: center; gap: 0.8rem; }
+  .chat-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--terracotta); display: flex; align-items: center; justify-content: center;
+    border: 2px solid var(--gold);
+  }
+  .chat-avatar svg { fill: #fff; }
+  .chat-header-info h4 { font-size: 0.92rem; color: var(--cream); font-weight: 500; }
+  .chat-header-info p { font-size: 0.72rem; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; }
+  .chat-header-info p::before { content: '●'; font-size: 0.5rem; color: #5CBA47; }
+  .chat-close { background: none; border: none; cursor: pointer; padding: 0.2rem; }
+  .chat-close svg { fill: rgba(247,240,230,0.45); transition: fill 0.2s; }
+  .chat-close:hover svg { fill: var(--cream); }
+  .chat-messages {
+    flex: 1; overflow-y: auto; padding: 1.2rem;
+    display: flex; flex-direction: column; gap: 0.9rem;
+    background: var(--warm-white);
+  }
+  .msg {
+    max-width: 82%; padding: 0.75rem 1rem; border-radius: 3px;
+    font-size: 0.88rem; line-height: 1.55;
+  }
+  .msg.bot {
+    background: #fff; color: var(--text);
+    align-self: flex-start;
+    border: 1px solid rgba(107,76,53,0.15);
+    border-bottom-left-radius: 0;
+  }
+  .msg.user {
+    background: var(--terracotta); color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+  }
+  .typing-dots { display: flex; align-items: center; gap: 4px; padding: 0.2rem 0; }
+  .typing-dots span {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--text-light);
+    animation: dot 1.3s infinite;
+  }
+  .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes dot { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-7px)} }
+  .chat-input-row {
+    padding: 0.9rem 1rem; border-top: 1px solid rgba(107,76,53,0.15);
+    display: flex; gap: 0.5rem; background: #fff;
+  }
+  .chat-input {
+    flex: 1; border: 1.5px solid rgba(107,76,53,0.2);
+    border-radius: 2px; padding: 0.6rem 0.85rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    background: var(--warm-white); color: var(--deep);
+    transition: border-color 0.2s;
+  }
+  .chat-input:focus { outline: none; border-color: var(--terracotta); }
+  .chat-send {
+    background: var(--terracotta); border: none;
+    border-radius: 2px; padding: 0.6rem 1rem;
+    cursor: pointer; transition: background 0.2s; flex-shrink: 0;
+  }
+  .chat-send:hover { background: var(--bark); }
+  .chat-send svg { fill: #fff; display: block; }
+
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero-content { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .hero-visual { display: none; }
+    .about-grid, .video-grid, .contact-grid, .payment-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid, .audience-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .about, .services, .audience, .process, .video-section, .payment, .contact { padding: 5rem 1.5rem; }
+    footer { flex-direction: column; text-align: center; }
+    .chat-window { width: 320px; }
+    .contact-photo { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="./tcbg_logo.png" alt="The Creative Business Group">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#payment">Payment</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Free Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Strategic Business Infrastructure</p>
+      <h1 class="hero-title">Your vision.<br><em>Built to last.</em></h1>
+      <p class="hero-sub">We help founders, creators, and growing businesses build the systems, structure, and strategy they need to thrive — so you can stay focused on your craft.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start Your Journey</a>
+        <a href="#services" class="btn-ghost">See How We Help</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo-main">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Business professional">
+      </div>
+      <div class="hero-photo-accent">
+        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80" alt="Team collaboration">
+      </div>
+      <div class="hero-stat">
+        <p class="hero-stat-num">10+</p>
+        <p class="hero-stat-label">Years Building</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">Strategic Planning <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Business Structure <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Operational Systems <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Growth Strategy <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Capital Readiness <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Founder Support <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Creator Economy <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Incubation Services <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Strategic Planning <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Business Structure <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Operational Systems <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Growth Strategy <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Capital Readiness <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Founder Support <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Creator Economy <span class="marquee-sep">◆</span></span>
+    <span class="marquee-item">Incubation Services <span class="marquee-sep">◆</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-grid">
+      <div class="about-photos">
+        <div class="about-photo-1">
+          <img src="./founders_tile.jpg" alt="Our founders" loading="lazy">
+        </div>
+        <div class="about-photo-2">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" alt="Strategy session" loading="lazy">
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-num">10+</span>
+          <span class="about-badge-text">Years of Results</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-label">Our Purpose</p>
+        <h2>We don't just advise.<br>We <em>build</em> with you.</h2>
+        <p>At The Creative Business Group, you work side by side with our team of expert consultants. Our mission is to empower businesses with innovative strategies — focusing on growth and operational excellence.</p>
+        <p>We specialize in startup management, business structuring, marketing, and funding — all the aspects that make a business thrive, handled with care and precision.</p>
+        <a href="tel:18774204332" class="btn-primary" style="margin-top:1.5rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call Us Free — 877-420-4332
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <p class="section-label">What We Do</p>
+      <h2>Built around your goals</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="Governance" loading="lazy">
+        </div>
+        <div class="service-body">
+          <p class="service-num">01</p>
+          <h3>Governance</h3>
+          <p>Operational structure, automation, compliance, and business integrity. We build the rules your business runs by.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80" alt="Incubation" loading="lazy">
+        </div>
+        <div class="service-body">
+          <p class="service-num">02</p>
+          <h3>Incubation</h3>
+          <p>Strategic development, launch pathways, and growth planning for emerging ventures ready to take the next step.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Capital Readiness" loading="lazy">
+        </div>
+        <div class="service-body">
+          <p class="service-num">03</p>
+          <h3>Capital Readiness</h3>
+          <p>Presentation strategy, investor relations, and access to high-level materials when it's time to raise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience">
+  <div class="audience-inner">
+    <div class="audience-header">
+      <p class="section-label">Who We Serve</p>
+      <h2>We build for ambitious people</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <img src="./founders_audience_tile.jpg" alt="Founders" loading="lazy">
+        <div class="audience-overlay">
+          <span class="audience-tag">Founders</span>
+          <h3>Start with clarity</h3>
+          <p>Build operational structure and momentum from idea to execution.</p>
+        </div>
+      </div>
+      <div class="audience-card">
+        <img src="./creators_audience_tile.jpg" alt="Creators" loading="lazy">
+        <div class="audience-overlay">
+          <span class="audience-tag">Creators</span>
+          <h3>Turn vision into revenue</h3>
+          <p>Transform your IP into organized business infrastructure.</p>
+        </div>
+      </div>
+      <div class="audience-card">
+        <img src="./businesses_audience_tile.jpg" alt="Growing Businesses" loading="lazy">
+        <div class="audience-overlay">
+          <span class="audience-tag">Growing Businesses</span>
+          <h3>Scale with intention</h3>
+          <p>Prepare for expansion, stronger governance, and capital conversations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="process-header">
+      <p class="section-label">How It Works</p>
+      <h2>From vision to reality</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step-img">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" alt="Discover" loading="lazy">
+        </div>
+        <p class="step-num">01</p>
+        <h3>Discover</h3>
+        <p>We understand your idea, market, and current state — without judgment, just curiosity.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-img">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="Structure" loading="lazy">
+        </div>
+        <p class="step-num">02</p>
+        <h3>Structure</h3>
+        <p>We organize your business model, offer, and priorities into a clear and actionable plan.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-img">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Build" loading="lazy">
+        </div>
+        <p class="step-num">03</p>
+        <h3>Build</h3>
+        <p>We create the systems and visibility needed to move forward with confidence.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-img">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="Scale" loading="lazy">
+        </div>
+        <p class="step-num">04</p>
+        <h3>Scale</h3>
+        <p>We prepare you for lead flow, capital readiness, and sustainable long-term growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-inner">
+    <div class="video-grid">
+      <div class="video-text">
+        <p class="section-label">See It In Action</p>
+        <h2>What working with TCBG looks like</h2>
+        <p>We bring strategic clarity, operational structure, and scalable infrastructure to organizations ready to move forward. Watch how we turn vision into business momentum.</p>
+        <a href="#contact" class="btn-primary">Book a Free Session</a>
+      </div>
+      <div class="video-embed">
+        <div class="video-thumb" id="videoThumb" onclick="playVideo()">
+          <img src="./growth_scale_strip.jpg" alt="Watch our story" loading="lazy">
+          <div class="video-play-overlay">
+            <div class="play-ring">
+              <svg width="26" height="26" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <p>Watch Our Story</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="payment" id="payment">
+  <div class="payment-inner">
+    <div class="payment-grid">
+      <div class="payment-text">
+        <p class="section-label">Quick & Secure Payment</p>
+        <h2>Ready to invest in your business?</h2>
+        <p>Make a secure payment for your consultation, retainer, or service package. All transactions are encrypted and processed securely.</p>
+        <p style="font-size:0.88rem;color:var(--text-light);">Questions about payment? Call us at <a href="tel:18774204332" style="color:var(--terracotta);font-weight:500;">1-877-420-4332</a></p>
+      </div>
+      <div class="payment-card">
+        <div class="payment-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+        </div>
+        <h3>Secure Payment Portal</h3>
+        <p>All major cards accepted. Instant confirmation sent to your email.</p>
+        <div class="payment-badges">
+          <div class="payment-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            256-bit SSL Encrypted
+          </div>
+          <div class="payment-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+            Instant Confirmation
+          </div>
+          <div class="payment-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+            Visa, Mastercard, Amex, Discover
+          </div>
+        </div>
+        <button class="pay-btn" onclick="alert('Payment portal coming soon. Please call 1-877-420-4332.')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
+          Make a Payment
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div class="contact-photo">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80" alt="Ready to talk" loading="lazy">
+      </div>
+      <div class="contact-info">
+        <p class="section-label">Get In Touch</p>
+        <h2>Let's build something worth building</h2>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--terracotta)"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          </div>
+          <div>
+            <p class="contact-detail-label">Phone</p>
+            <a href="tel:18774204332" class="contact-detail-value">1-877-420-4332</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--terracotta)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <p class="contact-detail-label">Email</p>
+            <a href="mailto:info@thecreativebusinessgroup.com" class="contact-detail-value">info@thecreativebusinessgroup.com</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--terracotta)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <p class="contact-detail-label">Address</p>
+            <span class="contact-detail-value">1050 Crown Pointe Pkwy, Dunwoody, GA 30338</span>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="jane@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>I'm a...</label>
+            <select>
+              <option>Founder / Entrepreneur</option>
+              <option>Creator / Artist</option>
+              <option>Growing Business</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us a bit about what you're building..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="./tcbg_logo.png" alt="TCBG">
+  <p>© 2026 The Creative Business Group Inc. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="tel:18774204332">877-420-4332</a>
+    <a href="mailto:info@thecreativebusinessgroup.com">Email</a>
+  </div>
+</footer>
+
+<!-- CHATBOT -->
+<div class="chat-bubble" id="chatBubble">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-avatar">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <div class="chat-header-info">
+          <h4>TCBG Assistant</h4>
+          <p>Online now</p>
+        </div>
+      </div>
+      <button class="chat-close" onclick="closeChat()">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Hi there! 👋 I'm here to help you learn about The Creative Business Group. What can I help you with today?</div>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Ask me anything..." onkeypress="if(event.key==='Enter')sendMessage()" oninput="resetIdleTimer()">
+      <button class="chat-send" onclick="sendMessage()">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-toggle" id="chatToggle" onclick="toggleChat()">
+    <svg id="chatIconOpen" width="26" height="26" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    <svg id="chatIconClose" width="26" height="26" viewBox="0 0 24 24" style="display:none"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    <div class="chat-badge" id="chatBadge">1</div>
+  </button>
+</div>
+
+<script>
+  let idleTimer = null;
+  let chatOpen = false;
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    const w = document.getElementById('chatWindow');
+    const openIcon = document.getElementById('chatIconOpen');
+    const closeIcon = document.getElementById('chatIconClose');
+    const badge = document.getElementById('chatBadge');
+    if (chatOpen) {
+      w.classList.add('open');
+      openIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+      badge.style.display = 'none';
+      resetIdleTimer();
+    } else {
+      w.classList.remove('open');
+      openIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+    }
+  }
+
+  function closeChat() {
+    chatOpen = false;
+    document.getElementById('chatWindow').classList.remove('open');
+    document.getElementById('chatIconOpen').style.display = 'block';
+    document.getElementById('chatIconClose').style.display = 'none';
+    clearTimeout(idleTimer);
+  }
+
+  function resetIdleTimer() {
+    clearTimeout(idleTimer);
+    if (chatOpen) {
+      idleTimer = setTimeout(() => {
+        closeChat();
+      }, 30000);
+    }
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const messages = document.getElementById('chatMessages');
+    const text = input.value.trim();
+    if (!text) return;
+    resetIdleTimer();
+
+    messages.innerHTML += `<div class="msg user">${text}</div>`;
+    input.value = '';
+    messages.scrollTop = messages.scrollHeight;
+
+    const loadingId = 'load-' + Date.now();
+    messages.innerHTML += `<div class="msg bot" id="${loadingId}"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-haiku-4-5-20251001',
+          max_tokens: 300,
+          system: `You are a warm, friendly assistant for The Creative Business Group (TCBG), based in Dunwoody, GA.
+TCBG helps founders, creators, and growing businesses build structure, strategy, and operational systems so they can focus on their craft.
+Services: Governance (operational structure & compliance), Incubation (growth planning & launch), Capital Readiness (investor relations & fundraising).
+Phone: 1-877-420-4332. Email: info@thecreativebusinessgroup.com. Address: 1050 Crown Pointe Pkwy, Dunwoody, GA 30338.
+Free consultation available — always invite people to book or call. Keep responses warm, brief (2-3 sentences max), encouraging, and human.`,
+          messages: [{ role: 'user', content: text }]
+        })
+      });
+      const data = await res.json();
+      const reply = data.content?.[0]?.text || "Thanks for reaching out! Please call us at 1-877-420-4332 and we'll be happy to help.";
+      document.getElementById(loadingId).remove();
+      messages.innerHTML += `<div class="msg bot">${reply}</div>`;
+    } catch(e) {
+      document.getElementById(loadingId).remove();
+      messages.innerHTML += `<div class="msg bot">Thanks for your message! Give us a call at 1-877-420-4332 and we'll get you taken care of right away. 😊</div>`;
+    }
+    messages.scrollTop = messages.scrollHeight;
+    resetIdleTimer();
+  }
+
+  function playVideo() {
+    const thumb = document.getElementById('videoThumb');
+    thumb.outerHTML = `<video controls autoplay style="width:100%;height:100%;object-fit:cover;"><source src="./Intro.mp4" type="video/mp4"></video>`;
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = 'var(--moss)';
+    setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 3000);
+  }
+</script>
+</body>
+</html>
