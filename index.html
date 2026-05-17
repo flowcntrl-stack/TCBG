@@ -240,10 +240,8 @@
 </head>
 <body>
 
-<!-- NATIVE AUDIO ELEMENT - LOADED CORRECTLY -->
 <audio id="bgMusic" src="./TCBGThankYouSoulfulTheme.m4a"></audio>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
     <img src="./tcbg_logo.png" alt="The Creative Business Group">
@@ -258,7 +256,13 @@
   <a href="#contact" class="nav-cta">Consultation</a>
 </nav>
 
-<!-- HERO -->
+<section id="headerPanel" style="width: 100%; height: auto; padding: 80px 0; background: var(--deep); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(201,149,42,0.25); position: relative; z-index: 2; margin-top: 80px;">
+  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=80" alt="Executive Header Texture" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.1; filter: grayscale(100%);">
+  <div class="logo-text" style="color: var(--cream); font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; text-transform: uppercase; letter-spacing: 0.15em; text-align: center; position: relative; z-index: 3;">
+    The Creative Business Group
+  </div>
+</section>
+
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -273,13 +277,11 @@
       </div>
     </div>
     <div class="hero-visual">
-      <!-- MAIN SLIDESHOW -->
       <div class="hero-photo-main" id="mainSlideshow">
         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Executive Leadership" class="active" fetchpriority="high">
         <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" alt="Modern Corporate Setup" loading="lazy">
         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Team Dynamic Work" loading="lazy">
       </div>
-      <!-- ACCENT SLIDESHOW -->
       <div class="hero-photo-accent" id="accentSlideshow">
         <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80" alt="Collaborative Strategy" class="active" decoding="async">
         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Data Analytics Planning" loading="lazy">
@@ -289,7 +291,6 @@
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-bar">
   <div class="marquee-track">
     <span class="marquee-item">Strategic Planning ◆</span><span class="marquee-item">Business Structure ◆</span>
@@ -300,7 +301,6 @@
   </div>
 </div>
 
-<!-- VIDEO (PLACED SMOOTHLY UNDER MARQUEE WITH STANDARD PAGE PADDING) -->
 <section class="video-section">
   <div class="video-inner">
     <div class="video-text">
@@ -320,7 +320,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-inner">
     <div class="about-photos">
@@ -340,7 +339,6 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services" id="services">
   <div class="services-inner">
     <div class="services-header">
@@ -376,7 +374,6 @@
   </div>
 </section>
 
-<!-- AUDIENCE -->
 <section class="audience">
   <div class="audience-header">
     <p class="section-label">Who We Serve</p>
@@ -410,7 +407,6 @@
   </div>
 </section>
 
-<!-- PROCESS -->
 <section class="process" id="process">
   <div class="process-inner">
     <div class="process-header">
@@ -446,7 +442,6 @@
   </div>
 </section>
 
-<!-- PAYMENT -->
 <section class="payment" id="payment">
   <div class="payment-inner">
     <div class="payment-grid">
@@ -479,7 +474,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
     <div class="contact-info">
@@ -497,7 +491,6 @@
   </div>
 </section>
 
-<!-- FOOTER WITH STRATEGICALLY CENTERED CREDIT -->
 <footer>
   <p class="footer-copy">© 2026 The Creative Business Group Inc. All rights reserved.</p>
   <div class="footer-credit">
@@ -509,36 +502,29 @@
   </div>
 </footer>
 
-<!-- SYSTEM CHAT ARCHITECTURE SYSTEM -->
 <div class="chat-system-container" style="position: fixed; bottom: 2rem; right: 2rem; z-index: 200; font-family: 'DM Sans', sans-serif;">
   
-  <!-- Chat Window Drawer -->
   <div id="chatDrawer" style="display: none; flex-direction: column; position: absolute; bottom: 80px; right: 0; width: 360px; height: 480px; background: var(--deep2); border: 1px solid rgba(201,149,42,0.25); border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.6); overflow: hidden;">
-    <!-- Header -->
     <div style="background: var(--deep); padding: 1rem; border-bottom: 1px solid rgba(201,149,42,0.15); display: flex; justify-content: space-between; align-items: center;">
       <span style="color: var(--cream); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;">TCBG ARCHITECTURAL NAVIGATOR</span>
       <button onclick="toggleChatSystem()" style="background: transparent; border: none; color: rgba(247,240,230,0.5); cursor: pointer; font-size: 1.1rem;">✕</button>
     </div>
-    <!-- Messages Stream -->
     <div id="chatStream" style="flex: 1; padding: 1.2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; font-size: 0.88rem; color: rgba(247,240,230,0.85);">
       <div style="background: rgba(196,98,45,0.1); border-left: 2px solid var(--terracotta); padding: 0.6rem 0.8rem; border-radius: 2px; max-width: 85%;">
         Welcome to TCBG. How can we assist with your operational framework today?
       </div>
     </div>
-    <!-- Input Dock -->
     <div style="padding: 0.8rem; background: var(--deep); border-top: 1px solid rgba(247,240,230,0.05); display: flex; gap: 0.5rem;">
       <input type="text" id="chatInput" placeholder="Ask about architecture..." style="flex: 1; padding: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(107,76,53,0.4); border-radius: 2px; color: var(--cream); font-family: inherit; font-size: 0.85rem;" onkeypress="if(event.key === 'Enter') sendChatMessage()">
       <button onclick="sendChatMessage()" style="background: var(--terracotta); border: none; color: white; padding: 0 1rem; border-radius: 2px; cursor: pointer; font-size: 0.8rem; font-weight: 500; text-transform: uppercase;">Send</button>
     </div>
   </div>
 
-  <!-- Toggle Button -->
   <button class="chat-toggle" onclick="toggleChatSystem()" style="width: 60px; height: 60px; border-radius: 50%; background: var(--terracotta); border: none; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; transition: 0.3s;">
     <svg width="26" height="26" fill="white" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
   </button>
 </div>
 
-<!-- CODE ENGINES -->
 <script>
   function startHeroSlideshows() {
     const mainImages = document.querySelectorAll('.hero-photo-main img');
