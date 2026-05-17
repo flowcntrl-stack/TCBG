@@ -163,12 +163,51 @@
   .form-group input, .form-group textarea, .form-group select { padding: 0.8rem; border: 1px solid rgba(107,76,53,0.2); border-radius: 2px; font-family: inherit; font-size: 0.93rem; color: var(--deep); background: #fff; }
   .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--terracotta); }
   
-  /* FOOTER */
-  footer { background: var(--deep); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(201,149,42,0.2); }
-  footer p { font-size: 0.82rem; color: rgba(247,240,230,0.45); }
-  .footer-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
-  .footer-links a { font-size: 0.8rem; color: rgba(247,240,230,0.45); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--gold); }
+  /* FOOTER 3-COLUMN SYSTEM */
+  footer { 
+    background: var(--deep); 
+    padding: 2.5rem 3rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    border-top: 1px solid rgba(201,149,42,0.2); 
+  }
+  .footer-copy { 
+    font-size: 0.82rem; 
+    color: rgba(247,240,230,0.45); 
+    flex: 1; 
+    text-align: left; 
+  }
+  .footer-credit { 
+    flex: 1; 
+    text-align: center; 
+  }
+  .footer-credit a { 
+    font-size: 0.8rem; 
+    color: var(--gold); 
+    text-decoration: none; 
+    transition: opacity 0.2s; 
+  }
+  .footer-credit a:hover { 
+    opacity: 0.8; 
+  }
+  .footer-links { 
+    display: flex; 
+    gap: 1.5rem; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    flex: 1; 
+    justify-content: flex-end; 
+  }
+  .footer-links a { 
+    font-size: 0.8rem; 
+    color: rgba(247,240,230,0.45); 
+    text-decoration: none; 
+    transition: color 0.2s; 
+  }
+  .footer-links a:hover { 
+    color: var(--gold); 
+  }
 
   /* CHATBOT MINI */
   .chat-bubble { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; }
@@ -190,8 +229,10 @@
     .hero-visual, .about-photos { height: 320px !important; margin-top: 1rem; }
     .hero-photo-main, .about-photo-1 { width: 90% !important; height: 90% !important; }
     .hero-photo-accent, .about-photo-2 { width: 55% !important; height: 55% !important; }
-    footer { flex-direction: column; text-align: center; gap: 1.5rem; padding: 2rem 1.25rem; }
-    .footer-links { justify-content: center; }
+    
+    /* Mobile Footer Stack Adjustment */
+    footer { flex-direction: column; text-align: center; gap: 1.2rem; padding: 2rem 1.25rem; }
+    .footer-copy, .footer-credit, .footer-links { flex: none; text-align: center; justify-content: center; }
   }
 </style>
 </head>
@@ -455,14 +496,15 @@
   </div>
 </section>
 
-<!-- FOOTER WITH SLEEK WATERMARK -->
+<!-- FOOTER WITH STRATEGICALLY CENTERED CREDIT -->
 <footer>
-  <p>© 2026 The Creative Business Group Inc. All rights reserved.</p>
+  <p class="footer-copy">© 2026 The Creative Business Group Inc. All rights reserved.</p>
+  <div class="footer-credit">
+    <a href="https://www.creativeflow.one" target="_blank">Designed by creativeflow.one</a>
+  </div>
   <div class="footer-links">
     <a href="tel:18774204332">877-420-4332</a>
     <a href="#about">About</a>
-    <span style="color: rgba(247,240,230,0.25); margin: 0 0.1rem;">|</span>
-    <a href="https://www.creativeflow.one" target="_blank" style="color: var(--gold);">Designed by creativeflow.one</a>
   </div>
 </footer>
 
