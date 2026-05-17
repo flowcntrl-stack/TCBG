@@ -169,7 +169,9 @@
   .payment-badges { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; align-items: flex-start; }
   .payment-badge { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: rgba(247,240,230,0.6); text-align: left; }
   .payment-badge svg { fill: var(--moss); flex-shrink: 0; }
-  .pay-btn { width: 100%; background: var(--moss); color: #fff; padding: 0.9rem; border-radius: 2px; border: none; font-family: inherit; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.6rem; }
+  
+  /* Added text-decoration: none; to prevent anchor link styling distortions */
+  .pay-btn { width: 100%; background: var(--moss); color: #fff; padding: 0.9rem; border-radius: 2px; border: none; font-family: inherit; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.6rem; text-decoration: none; }
   .pay-btn:hover { background: var(--bark); }
 
   /* CONTACT FORM */
@@ -468,9 +470,9 @@
             Instant Confirmation
           </div>
         </div>
-        <button class="pay-btn" onclick="alert('Payment portal configuration incoming. Please call 1-877-420-4332.')">
+        <a href="https://link.clover.com/urlshortener/Q5wzY3" target="_blank" rel="noopener noreferrer" class="pay-btn">
           Make a Payment
-        </button>
+        </a>
       </div>
     </div>
   </div>
