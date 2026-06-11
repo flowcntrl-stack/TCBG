@@ -320,22 +320,63 @@ footer a:hover {
     Business logic engineered by <a href="https://batchoneprocessing.com">Batch One Processing</a>.
   </div>
   
-</footer>
+</footer><audio id="siteAudio" preload="auto" loop>
+  <source src="/assets/TCBG-background-audio.mp3" type="audio/mpeg">
+</audio>
+
 <script>
   function runSlideshow(containerId, interval) {
     const container = document.getElementById(containerId);
     if (!container) return;
     const slides = container.querySelectorAll('img');
     let index = 0;
+
     setInterval(() => {
       slides[index].classList.remove('active');
       index = (index + 1) % slides.length;
       slides[index].classList.add('active');
     }, interval);
   }
+
   runSlideshow('mainSlideshow', 4200);
   runSlideshow('accentSlideshow', 5200);
 
+  const siteAudio = document.getElementById('siteAudio');
+  let audioStarted = false;
+
+  function startSiteAudio() {
+    if (!siteAudio || audioStarted) return;
+
+    siteAudio.volume = 0.28;
+
+    const playAttempt = siteAudio.play();
+
+    if (playAttempt !== undefined) {
+      playAttempt
+        .then(() => {
+          audioStarted = true;
+          removeAudioUnlockListeners();
+        })
+        .catch(() => {
+          // Browser blocked playback until stronger interaction.
+        });
+    }
+  }
+
+  function removeAudioUnlockListeners() {
+    document.removeEventListener('click', startSiteAudio);
+    document.removeEventListener('touchstart', startSiteAudio);
+    document.removeEventListener('pointerdown', startSiteAudio);
+    document.removeEventListener('keydown', startSiteAudio);
+    document.removeEventListener('scroll', startSiteAudio);
+  }
+
+  document.addEventListener('click', startSiteAudio, { passive: true });
+  document.addEventListener('touchstart', startSiteAudio, { passive: true });
+  document.addEventListener('pointerdown', startSiteAudio, { passive: true });
+  document.addEventListener('keydown', startSiteAudio);
+  document.addEventListener('scroll', startSiteAudio, { passive: true });
 </script>
 </body>
 </html>
+
